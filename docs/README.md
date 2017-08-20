@@ -1,8 +1,8 @@
 # aux
 
-[Heroku link]
+Heroku link
 
-[Trello link]
+Trello link
 
 ## Minimum Viable Product
 
@@ -48,4 +48,4 @@ Aux is a social music discovery platform inspired by Bandcamp. It is built using
 
 ### Phase 5: Search (2 days)
 
-**Objective:** Allow users to search for artists, albums, and tracks from a search bar in the nav component. 
+**Objective:** Allow users to search for artists, albums, and tracks from a search bar in the nav component.
