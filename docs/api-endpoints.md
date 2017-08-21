@@ -4,7 +4,7 @@
 
 ### Root
 
-- `GET /` - loads React web app
+- `GET /` - loads React web app; shows initial page 
 
 ## JSON API
 
