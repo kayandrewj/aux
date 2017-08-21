@@ -10,22 +10,20 @@
         session_token: null,
         artist_follow_ids: [1, 3],
         comment_ids: [1, 2],
+        profile_header: "www.header.com/6f7dA"
         artist: true, //boolean to determine artist status; if true, user has a value in the following table.
       },
     },
     artist_info: {
       //joining only users who are artists with this additional information
       //allows cleaner state and conditional validation of certain columns, i.e.
-      //requiring artists to have a band name and profile page. 
+      //requiring artists to have a band name and profile page.
       user_id: 1,
       albums: [1, 2]
       band_name: "Gypsy and the Cat"
       bio: "Gypsy & The Cat is an indie/dream pop duo formed by former Melbourne DJs Xavier Bacash and Lionel Towers.",
       location_id: [1]
-      profile_info: {
-        header_img: "www.headerimg.com/7fhD1",
-        profile_color: "#8af3ba",
-      },
+      profile_color: "#8af3ba",
     },
     albums: {
       1: {
