@@ -15,3 +15,15 @@ export const signup = user => dispatch => {
     newUser => dispatch(receiveCurrentUser(newUser))
   );
 };
+
+export const login = user => dispatch => {
+  SessionApiUtil.login(user).then(
+    currentUser => dispatch(receiveCurrentUser(currentUser))
+  );
+};
+
+export const logout = () => dispatch => {
+  SessionApiUtil.logout().then(
+    currentUser => dispatch(receiveCurrentUser(currentUser))
+  );
+};
