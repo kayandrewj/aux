@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.linkPath = this.linkPath.bind(this);
     this.greeting = this.greeting.bind(this);
     this.question = this.question.bind(this);
 
@@ -29,26 +28,17 @@ class SessionForm extends React.Component {
   }
 
 
-  // for conditionally dictating paths
-  linkPath() { //function to dictate path of link behind form toggle button
-    if (this.props.formType === '/signup') {
-      return '/login';
-    } else if (this.props.formType === '/login'){
-      return '/signup';
-    }
-  }
-
   // for conditionally dictating UX
   greeting() {
-    return this.linkPath() === '/login' ? 'Sign up for a fan account' : 'Log In';
+    return this.props.formType !== '/login' ? 'Sign up for a fan account' : 'Log In';
   }
 
   question() {
-    return this.linkPath() === '/login' ? "Don't have an account?" : "Already have an account?";
+    return this.props.formType === '/login' ? "Don't have an account?" : "Already have an account?";
   }
 
   answer() {
-    return this.linkPath() === '/login' ? "Sign up for a fan account." : "Log in.";
+    return this.props.formType === '/login' ? "Sign up for a fan account." : "Log in.";
   }
 
 
@@ -63,11 +53,15 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session-box">
-        <h3>{this.greeting()}</h3>
+        <div className="login-header">
+          <h1>AUX</h1>
+        </div>
+
 
 
 
         <div className="session-form">
+          <h3>{this.greeting()}</h3>
           <form onSubmit={ this.handleSubmit }>
 
             {this.props.formType === '/signup' ? emailForm : null}
@@ -90,7 +84,7 @@ class SessionForm extends React.Component {
 
         <div className="session-question">
           <h6>{this.question()}</h6>
-          <Link to={this.linkPath()}>{this.answer()}</Link>
+          <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.answer()}</Link>
 
         </div>
       </div>
