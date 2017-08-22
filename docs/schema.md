@@ -9,8 +9,6 @@ username          | string    | not null, indexed, unique
 email             | string    | not null, indexed, unique
 password_digest   | string    | not null
 session_token     | string    | not null, indexed, unique
-follow_id         | integer   | indexed, unique (foreign key, references follows)
-comment_id        | integer   | indexed, unique (foreign key, references comments)
 artist            | boolean   | not null (flag, denotes ability to join with artist_info)
 
 ## artist_info
