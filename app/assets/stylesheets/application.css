@@ -63,7 +63,9 @@ h3 {
 .session-question {
   margin: 0 auto;
   width: 300px;
-
+  height: 300px;
+  padding-top: 18px;
+  justify-content: center;
 }
 
 h6 {
@@ -73,5 +75,6 @@ h6 {
     -webkit-margin-after: 0px;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-    font-family: 'Bitter'
+    font-family: 'Bitter';
+    padding: 9px;
 }
