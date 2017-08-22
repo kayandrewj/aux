@@ -1,1 +1,10 @@
-<main id="root">aux</main>
+<script type="text/javascript">
+  <% if logged_in? %>
+    window.currentUser = <%= render(
+      "api/users/user.json.jbuilder",
+      user: currentUser
+    ).html_safe %>
+    <% end %>
+</script>
+
+<main id="root"></main>
