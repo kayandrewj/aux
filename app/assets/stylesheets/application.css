@@ -61,4 +61,17 @@ h3 {
 }
 
 .session-question {
+  margin: 0 auto;
+  width: 300px;
+
+}
+
+h6 {
+    display: flex;
+    font-size: 14px;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Bitter'
 }
