@@ -14,7 +14,51 @@
  *= require_self
  */
 
+/*login-header session-wrapper, session-box, session-form, session-question */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+
+.session-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
-  font-family: sans-serif;
-  font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 72px;
+  color: white;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: black;
+
+}
+
+.login-header {
+  display: flex;
+  height: 100px;
+  background-color: black;
+  width: 100%;
+  padding-left: 25px;
+}
+
+.session-form {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.session-question {
 }
