@@ -17,12 +17,15 @@
 /*login-header session-wrapper, session-box, session-form, session-question */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900');
-@import url('https://fonts.googleapis.com/css?family=Bitter');
 
+
+body {
+  background-color: #fefefe;
+  align-content: center;
+}
 
 .session-wrapper {
   display: flex;
-  justify-content: center;
 }
 
 h1 {
@@ -38,19 +41,30 @@ h1 {
   align-items: center;
 }
 
-h3 {
+.form-type {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  color: black;
+  font-size: 28px;
+  color: #212121;
+  border-bottom: 3px solid #212121;
+  margin: 0 auto;
+  padding-top: 24px;
+  padding-bottom: 18px;
+  margin-bottom: 48px;
+  margin-top: 24px;
+  width: 256px;
+  display: flex;
+  justify-content: center;
 
 }
 
 .login-header {
   display: flex;
   height: 100px;
-  background-color: black;
-  width: 100%;
+  background-color: #212121;
+  width: auto;
   padding-left: 25px;
+  margin: 0;
 }
 
 .session-form {
@@ -58,23 +72,83 @@ h3 {
   width: 500px;
   margin: 0 auto;
   flex-direction: column;
+
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 237px;
+}
+
+
 .session-question {
-  margin: 0 auto;
-  width: 300px;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 256px;
+  height: 150px;
   padding-top: 18px;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 h6 {
-    display: flex;
-    font-size: 14px;
-    -webkit-margin-before: 0px;
+  display: flex;
+  font-size: 14px;
+  -webkit-margin-before: 0px;
     -webkit-margin-after: 0px;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    font-family: 'Bitter';
-    padding: 9px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding: 9px;
+}
+
+input {
+  color: black;
+  padding: 6px;
+  margin: 9px;
+  width: 172px;
+  border: 1.5px solid black;
+  border: 1.5px solid black;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input:focus {
+  outline: 1;
+  outline-color: black;
+  outline-style: ridge;
+}
+
+button {
+  border: none;
+  box-shadow: none;
+  background: none;
+  border: 3px solid black;
+  padding: 6px;
+  margin: 9px;
+  margin-top: 38px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: 256px;
+  font-size: 18px;
+  transition: ease .2s;
+}
+
+button:hover {
+  background-color: #edecec;
+  cursor: pointer;
+
+}
+
+button:focus {
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }

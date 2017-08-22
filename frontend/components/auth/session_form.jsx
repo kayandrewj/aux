@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.greeting = this.greeting.bind(this);
     this.question = this.question.bind(this);
+    this.buttonText = this.buttonText.bind(this);
 
   }
 
@@ -30,7 +31,7 @@ class SessionForm extends React.Component {
 
   // for conditionally dictating UX
   greeting() {
-    return this.props.formType !== '/login' ? 'Sign up for a fan account' : 'Log In';
+    return this.props.formType !== '/login' ? 'Sign up' : 'Login';
   }
 
   question() {
@@ -41,12 +42,16 @@ class SessionForm extends React.Component {
     return this.props.formType === '/login' ? "Sign up for a fan account." : "Log in.";
   }
 
+  buttonText(){
+    return this.props.formType === '/login' ? "Login" : "Sign Up";
+  }
+
 
   render() {
 
     const emailForm =
-      (<label>Email
-        <input onChange={this.handleChange('email')}/>
+      (<label>
+        <input placeholder="Email" onChange={this.handleChange('email')}/>
       </label>);
 
 
@@ -59,23 +64,23 @@ class SessionForm extends React.Component {
 
 
 
-
+        <div className="session-box">
         <div className="session-form">
-          <h3>{this.greeting()}</h3>
+          <p className="form-type">{this.greeting()}</p>
           <form onSubmit={ this.handleSubmit }>
 
             {this.props.formType === '/signup' ? emailForm : null}
 
 
-            <label>Username
-              <input onChange={this.handleChange('username')}/>
+            <label>
+              <input placeholder="Username" onChange={this.handleChange('username')}/>
             </label>
 
-            <label>Password
-              <input type="password" onChange={this.handleChange('password')}/>
+            <label>
+              <input type="password" placeholder="Password" onChange={this.handleChange('password')}/>
             </label>
 
-            <button>{this.props.formType.slice(1)}</button>
+            <button>{this.buttonText()}</button>
           </form>
 
         </div>
@@ -88,6 +93,7 @@ class SessionForm extends React.Component {
 
         </div>
       </div>
+    </div>
     );
   }
 }
