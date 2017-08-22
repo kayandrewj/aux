@@ -20,5 +20,13 @@
   "scripts": {
     "webpack": "webpack --watch"
   },
-  "author": "Andrew Kay"
+  "author": "Andrew Kay",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+
+  }
 }
