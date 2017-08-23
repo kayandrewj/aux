@@ -40,12 +40,15 @@ class Nav extends React.Component {
 
 
   render() {
+    const user = this.props.currentUser ? this.props.currentUser.username : undefined;
     debugger
     return(
 
     <div className="nav-god">
+
       <h1>AUX</h1>
-      {this.authButtons()}
+      <p className="nav-greeting">{user}</p>
+      <span>{this.authButtons()}</span>
 
 
     </div>

@@ -20,14 +20,18 @@ class SessionForm extends React.Component {
 
 
   componentDidMount() {
-    this.props.clearErrors()
+    this.props.clearErrors();
   }
 
   // for handling input
   handleSubmit(e) {
+    debugger;
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  loginGuest(e) {
   }
 
   handleChange(field) {
@@ -83,10 +87,11 @@ class SessionForm extends React.Component {
 
 
           <form onSubmit={ this.handleSubmit }>
-            {this.props.formType === '/signup' ? emailForm : null}
             <label>
               <input placeholder="Username" onChange={this.handleChange('username')}/>
             </label>
+
+            {this.props.formType === '/signup' ? emailForm : null}
 
             <label>
               <input type="password" placeholder="Password" onChange={this.handleChange('password')}/>
