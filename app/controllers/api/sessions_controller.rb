@@ -10,9 +10,9 @@ class Api::SessionsController < ApplicationController
       render json: user
     else
       if params[:user][:username]
-        render json: "Incorrect username/password combination."
+        render json: ["Incorrect username/password combination."], status: 422
       else
-        render json: "Username does not exist."
+        render json: ["Username does not exist."], status: 422
       end
     end
   end

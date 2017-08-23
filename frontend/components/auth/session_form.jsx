@@ -14,7 +14,13 @@ class SessionForm extends React.Component {
     this.greeting = this.greeting.bind(this);
     this.question = this.question.bind(this);
     this.buttonText = this.buttonText.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
+  }
 
+
+
+  componentDidMount() {
+    this.props.clearErrors()
   }
 
   // for handling input
@@ -47,6 +53,20 @@ class SessionForm extends React.Component {
   }
 
 
+
+  handleErrors() {
+    return(
+      <ul className="error-list">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`} className="error">
+            {error}
+          </li>
+        ))}
+      </ul>
+
+    );
+  }
+
   render() {
 
     const emailForm =
@@ -54,24 +74,20 @@ class SessionForm extends React.Component {
         <input placeholder="Email" onChange={this.handleChange('email')}/>
       </label>);
 
-
-
     return(
       <div className="session-box">
         <div className="login-header">
           <h1>AUX</h1>
         </div>
 
-
-
         <div className="session-box">
         <div className="session-form">
           <p className="form-type">{this.greeting()}</p>
+          <div className="error-box">{this.handleErrors()}</div>
+
+
           <form onSubmit={ this.handleSubmit }>
-
             {this.props.formType === '/signup' ? emailForm : null}
-
-
             <label>
               <input placeholder="Username" onChange={this.handleChange('username')}/>
             </label>
@@ -84,9 +100,6 @@ class SessionForm extends React.Component {
           </form>
 
         </div>
-
-
-
         <div className="session-question">
           <h6>{this.question()}</h6>
           <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.answer()}</Link>
