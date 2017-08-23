@@ -6,7 +6,11 @@ class Nav extends React.Component {
     super(props);
   }
 
+
+
+
   render() {
+    debugger
     return(
 
     <div className="nav-god">

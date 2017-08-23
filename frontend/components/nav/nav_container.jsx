@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import MainNav from './main_nav';
+import Nav from './nav';
 import { withRouter } from 'react-router-dom';
 import { login, logout, signup } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+  debugger
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainNav));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));
