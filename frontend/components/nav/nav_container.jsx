@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { login, logout, signup } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser),
