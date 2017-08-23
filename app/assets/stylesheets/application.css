@@ -30,18 +30,6 @@ body {
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 72px;
-  color: white;
-  -webkit-margin-before: 0px;
-  -webkit-margin-after: 0px;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  display: flex;
-  align-items: center;
-
-  display: flex;
   height: 100px;
   background-color: #212121;
   width: auto;
@@ -137,7 +125,7 @@ button {
 }
 
 button:hover {
-  background-color: #edecec;
+  background-color: #a5efe0;
   cursor: pointer;
 
 }
