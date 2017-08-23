@@ -51,7 +51,7 @@ h1 {
   margin: 0 auto;
   padding-top: 24px;
   padding-bottom: 18px;
-  margin-bottom: 48px;
+  margin-bottom: 0px;
   margin-top: 24px;
   width: 256px;
   display: flex;
@@ -152,4 +152,24 @@ a {
   color: inherit;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+}
+
+.error-box {
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  padding: 9px;
+}
+
+.error-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.error {
+  padding: 2px;
+  color: #210000;
 }
