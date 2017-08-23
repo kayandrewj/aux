@@ -41,7 +41,6 @@ class Nav extends React.Component {
 
   render() {
     const user = this.props.currentUser ? this.props.currentUser.username : undefined;
-    debugger
     return(
 
     <div className="nav-god">
