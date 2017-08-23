@@ -76,11 +76,7 @@ class SessionForm extends React.Component {
 
     return(
       <div className="session-box">
-        <div className="login-header">
-          <h1>AUX</h1>
-        </div>
 
-        <div className="session-box">
         <div className="session-form">
           <p className="form-type">{this.greeting()}</p>
           <div className="error-box">{this.handleErrors()}</div>
@@ -105,7 +101,6 @@ class SessionForm extends React.Component {
           <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.answer()}</Link>
 
         </div>
-      </div>
     </div>
     );
   }
