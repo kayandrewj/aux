@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
 
   def create
       # # TODO: comment in line 8 after constructing components
-      if true # <== obtuse way to skip artist profile stuff until form exists
+    if true # <== obtuse way to skip artist profile stuff until form exists
 
         # if !user_params is_artist <== needs another react component to work; user doesn't sent is_artist param
       @user = User.new(user_params)
