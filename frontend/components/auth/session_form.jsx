@@ -9,13 +9,14 @@ class SessionForm extends React.Component {
       password: '',
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.greeting = this.greeting.bind(this);
     this.question = this.question.bind(this);
+    this.isArtist = this.isArtist.bind(this);
     this.buttonText = this.buttonText.bind(this);
-    this.handleErrors = this.handleErrors.bind(this);
     this.loginGuest = this.loginGuest.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +26,17 @@ class SessionForm extends React.Component {
   // for handling input
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = Object.assign({}, this.state, this.isArtist());
     this.props.processForm(user);
+  }
+
+  // for booleaning user
+  isArtist() {
+    if (this.props.formType === '/band') {
+      return { is_artist: true};
+    } else {
+      return {};
+    }
   }
 
   handleChange(field) {
@@ -57,7 +67,7 @@ class SessionForm extends React.Component {
         account.
       </h6>);
     } else {
-      return <Link to={'/login'}>Log in.</Link>;
+      return <h6><Link to={'/login'}>Log in.</Link></h6>;
     }
   }
 
@@ -109,7 +119,7 @@ class SessionForm extends React.Component {
               <input placeholder="Username" onChange={this.handleChange('username')}/>
             </label>
 
-            {this.props.formType === '/signup' || '/band' ? emailForm : null}
+            {this.props.formType === '/login' ? null : emailForm}
 
             <label>
               <input type="password" placeholder="Password" onChange={this.handleChange('password')}/>
@@ -128,8 +138,8 @@ class SessionForm extends React.Component {
 
         <div className="session-question">
 
-          <h6>{this.question()}</h6>
-          <h6>{this.answer()}</h6>
+          {this.question()}
+          {this.answer()}
 
 
 

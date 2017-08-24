@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let action;
   if (ownProps.location.pathname === '/login') {
     action = login;
-  } else if (ownProps.location.pathname === '/signup') {
+  } else if (ownProps.location.pathname === '/signup' || '/band') {
     action = signup;
   }
   return {
