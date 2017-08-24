@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <div className='session-form-wrapper'>
 
-
+        <Route exact path="/band" component={SessionFormContainer} />
         <Route path="/" component={NavContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <AuthRoute path="/login" component={SessionFormContainer} />

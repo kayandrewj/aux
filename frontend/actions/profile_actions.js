@@ -1,18 +1,4 @@
-//actions: RECEIVE_PROFILE_EDIT, RECEIVE_PROFILE_ERRORS
-
-export const RECEIVE_PROFILE_EDIT = "RECEIVE_PROFILE_EDIT";
-
-
-
-
-
-
-
-
-
-
-
-
+//constants: RECEIVE_PROFILE_EDIT, RECEIVE_PROFILE_ERRORS
 
 // need edit action
 // if edit is happening on profile reducer this also needs action to send

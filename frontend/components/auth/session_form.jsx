@@ -48,7 +48,17 @@ class SessionForm extends React.Component {
   }
 
   answer() {
-    return this.props.formType === '/login' ? "Sign up for a fan account." : "Log in.";
+    if (this.props.formType === '/login') {
+      return (<h6>
+        Sign up for a
+        &nbsp;<Link to={'/signup'}>fan</Link>&nbsp;
+        or
+        &nbsp;<Link to={'/band'}> artist </Link>&nbsp;
+        account.
+      </h6>);
+    } else {
+      return <Link to={'/login'}>Log in.</Link>;
+    }
   }
 
   buttonText(){
@@ -70,6 +80,16 @@ class SessionForm extends React.Component {
 
   render() {
 
+    const bandForm =
+      (<label>
+        <input placeholder="Band name" onChange={this.handleChange('band')}/>
+      </label>);
+
+    const bioForm =
+      (<label>
+        <input type="text" placeholder="Tell us about your music" onChange={this.handleChange('bio')}/>
+      </label>);
+
     const emailForm =
       (<label>
         <input placeholder="Email" onChange={this.handleChange('email')}/>
@@ -89,11 +109,14 @@ class SessionForm extends React.Component {
               <input placeholder="Username" onChange={this.handleChange('username')}/>
             </label>
 
-            {this.props.formType === '/signup' ? emailForm : null}
+            {this.props.formType === '/signup' || '/band' ? emailForm : null}
 
             <label>
               <input type="password" placeholder="Password" onChange={this.handleChange('password')}/>
             </label>
+
+            {this.props.formType === '/band' ? bandForm : null}
+            {this.props.formType === '/band' ? bioForm : null}
 
             <button>{this.buttonText()}</button>
           </form>
@@ -106,7 +129,10 @@ class SessionForm extends React.Component {
         <div className="session-question">
 
           <h6>{this.question()}</h6>
-          <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.answer()}</Link>
+          <h6>{this.answer()}</h6>
+
+
+
           {this.greeting() === 'Login' ? <button className="demo-button" onClick={this.loginGuest}>Demo Login</button> : undefined}
 
         </div>
