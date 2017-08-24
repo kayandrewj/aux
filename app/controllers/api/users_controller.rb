@@ -12,8 +12,8 @@ class Api::UsersController < ApplicationController
       end
     else
       @user = User.new(user_params)
-      @artist_profile = Artist.new(artist_params)
-      @user.artist_profile = @artist_profile #pre-database-save assignment. wat
+      @artist_profile = ArtistProfile.new(artist_profile_params)
+      @user.artist_profile = @artist_profile #pre-db-save assignment. wat
       if @user.save
         render json: @user
       else
@@ -24,8 +24,8 @@ class Api::UsersController < ApplicationController
 
   private
 
-  def artist_params
-    params.require(:artist).permit(:band, :bio, :header_img, :profile_color)
+  def artist_profile_params
+    params.require(:artist_profile).permit(:band, :bio, :header_img, :profile_color)
   end
 
   def user_params

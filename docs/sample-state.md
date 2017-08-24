@@ -14,7 +14,7 @@
         artist: true, //boolean to determine artist status; if true, user has a value in the following table.
       },
     },
-    artist_info: {
+    artist_profile: {
       2: {
         //joining only users who are artists with this additional information
         //allows cleaner state and conditional validation of certain columns, i.e.
