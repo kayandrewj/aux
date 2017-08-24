@@ -15,15 +15,17 @@
       },
     },
     artist_info: {
-      //joining only users who are artists with this additional information
-      //allows cleaner state and conditional validation of certain columns, i.e.
-      //requiring artists to have a band name and profile page.
-      user_id: 1,
-      albums: [1, 2]
-      band_name: "Gypsy and the Cat"
-      bio: "Gypsy & The Cat is an indie/dream pop duo formed by former Melbourne DJs Xavier Bacash and Lionel Towers.",
-      location_id: [1]
-      profile_color: "#8af3ba",
+      2: {
+        //joining only users who are artists with this additional information
+        //allows cleaner state and conditional validation of certain columns, i.e.
+        //requiring artists to have a band name and profile page.
+        user_id: 1,
+        albums: [1, 2]
+        band_name: "Gypsy and the Cat"
+        bio: "Gypsy & The Cat is an indie/dream pop duo formed by former Melbourne DJs Xavier Bacash and Lionel Towers.",
+        location_id: [1]
+        profile_color: "#8af3ba",
+      }
     },
     albums: {
       1: {
