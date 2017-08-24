@@ -30,7 +30,6 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // for booleaning user
   isArtist() {
     if (this.props.formType === '/band') {
       return { is_artist: true};
