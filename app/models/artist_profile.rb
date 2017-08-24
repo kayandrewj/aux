@@ -12,7 +12,7 @@
 
 class ArtistProfile < ApplicationRecord
   validates :user_id, :band, presence: true;
-  validates_format_of :profile_color, :with => /\A[A-Za-z\d]([-\w]{,498}[A-Za-z\d])?\Z/i
+  validates_format_of :profile_color, :with => /\A[A-Za-z\d]([-\w]{,498}[A-Za-z\d])?\Z/i, allow_nil: true;
 
 
   belongs_to :user, inverse_of: :artist_profile
