@@ -37,7 +37,7 @@ class Nav extends React.Component {
     } else {
       return(
         <div className='nav-buttons'>
-          <Link to={`/band/${this.usersName()}`} className="nav-greeting">{this.usersName()}</Link>
+          <Link to={`/user/${this.usersName()}`} className="nav-greeting">{this.usersName()}</Link>
           <button className="log-out" onClick={this.props.logout}>Log out</button>
         </div>
       );
