@@ -23,7 +23,7 @@ class Nav extends React.Component {
     if (this.isAuthPage()) {
       return(
         <div className='nav-buttons'>
-          <Link to={'/'}>Main</Link>
+          <Link to={'/no/help/for/you'}>Help</Link>
         </div>
       );
     } else if (!this.isAuthPage() && !this.props.loggedIn) {
@@ -36,7 +36,7 @@ class Nav extends React.Component {
     } else {
       return(
         <div className='nav-buttons'>
-          <a href="#" className="nav-greeting">{this.usersName()}</a>
+          <Link to={`/${this.usersName()}`} className="nav-greeting">{this.usersName()}</Link>
           <button className="log-out" onClick={this.props.logout}>Log out</button>
         </div>
       );
@@ -47,7 +47,9 @@ class Nav extends React.Component {
   return(
 
     <div className="nav-god">
-      <h1>AUX</h1>
+      <h1>
+        <Link to={'/'} className="logo">AUX</Link>
+      </h1>
       <span>
         {this.authButtons()}
       </span>

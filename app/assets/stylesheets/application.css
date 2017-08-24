@@ -29,7 +29,18 @@ body {
   display: flex;
 }
 
-h1 {
+.logo {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 72px;
+  color: white;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  display: flex;
+  align-items: center;
   height: 100px;
   background-color: #212121;
   width: auto;
