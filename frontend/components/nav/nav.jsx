@@ -10,8 +10,9 @@ class Nav extends React.Component {
   }
 
   isAuthPage() {
+    const pageType = this.props.pageType;
     return(
-      this.props.pageType === '/login' || this.props.pageType === '/signup'
+      pageType === '/login' || pageType === '/signup' || pageType === '/band'
     );
   }
 
