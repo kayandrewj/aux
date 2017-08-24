@@ -11,15 +11,14 @@ password_digest   | string    | not null
 session_token     | string    | not null, indexed, unique
 artist            | boolean   | not null (flag, denotes ability to join with artist_info)
 
-## artist_info
+## artist
 column name   | data type | details
 --------------|-----------|-----------------------
 id            | integer   | not null, primary key
 user_id       | integer   | not null (foreign key, references users), unique, indexed
-album_id      | string    | not null (foreign key, references albums), unique, indexed
 band_name     | string    | not null, indexed
-bio           | text      | not null, foreign key (references users)
-location_id   | integer   | foreign key (references notebooks), indexed
+bio           | text      |
+location_id   | integer   |
 header_img    | string    |
 profile_color | string    |
 
@@ -27,9 +26,8 @@ profile_color | string    |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
+user_id     | integer   | not null, foreign key (references artists), indexed
 title       | string    | not null
-track_id    | integer   | not null, foreign key (references tracks)
 art_url     | string    |
 
 ## tracks

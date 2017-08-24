@@ -7,7 +7,7 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  artist          :boolean          default(FALSE), not null
+#  is_artist       :boolean          default(FALSE), not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -16,6 +16,8 @@ class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+
+  has_one :artist
 
   after_initialize :ensure_session_token
   attr_reader :password
