@@ -15,9 +15,8 @@ class SessionForm extends React.Component {
     this.question = this.question.bind(this);
     this.buttonText = this.buttonText.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.loginGuest = this.loginGuest.bind(this);
   }
-
-
 
   componentDidMount() {
     this.props.clearErrors();
@@ -25,19 +24,20 @@ class SessionForm extends React.Component {
 
   // for handling input
   handleSubmit(e) {
-    debugger;
+    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-  }
-
-  loginGuest(e) {
   }
 
   handleChange(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
+  loginGuest() {
+    const user = {username: "deafheaven", password: "password"};
+    this.props.processForm(user);
+  }
 
   // for conditionally dictating UX
   greeting() {
@@ -55,8 +55,6 @@ class SessionForm extends React.Component {
   buttonText(){
     return this.props.formType === '/login' ? "Login" : "Sign Up";
   }
-
-
 
   handleErrors() {
     return(
@@ -85,6 +83,7 @@ class SessionForm extends React.Component {
           <p className="form-type">{this.greeting()}</p>
           <div className="error-box">{this.handleErrors()}</div>
 
+          <div className="formdemobutton">
 
           <form onSubmit={ this.handleSubmit }>
             <label>
@@ -101,9 +100,15 @@ class SessionForm extends React.Component {
           </form>
 
         </div>
+
+
+        </div>
+
         <div className="session-question">
+
           <h6>{this.question()}</h6>
           <Link to={this.props.formType === '/login' ? '/signup' : '/login'}>{this.answer()}</Link>
+          {this.greeting() === 'Login' ? <button className="demo-button" onClick={this.loginGuest}>Demo Login</button> : undefined}
 
         </div>
     </div>
