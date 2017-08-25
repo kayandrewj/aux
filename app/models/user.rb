@@ -10,6 +10,7 @@
 #  is_artist       :boolean          default(FALSE), not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  album_id        :integer
 #
 
 class User < ApplicationRecord
@@ -18,6 +19,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
 
   has_one :artist_profile, inverse_of: :user
+  has_many :albums
 
   after_initialize :ensure_session_token
   attr_reader :password

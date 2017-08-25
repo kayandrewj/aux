@@ -11,7 +11,7 @@
 #
 
 class ArtistProfile < ApplicationRecord
-  validates :user_id, :band, presence: true;
+  validates :user_id, :band, presence: true
 
 
   belongs_to :user, inverse_of: :artist_profile
