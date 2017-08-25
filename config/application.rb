@@ -14,5 +14,18 @@ module Bandcamp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV["s3_bucket"],
+        :access_key_id => ENV["AKIAI57HCHO6B3PCRUPQ"],
+        :secret_access_key => ENV["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"],
+        :s3_region => ENV["s3_region"]
+
+      }
+    }
+
   end
 end
