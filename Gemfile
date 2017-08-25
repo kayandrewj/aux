@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem "figaro"
-
 gem "aws-sdk"
 
 gem "paperclip", "~> 5.0.0"
