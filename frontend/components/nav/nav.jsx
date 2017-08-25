@@ -7,6 +7,7 @@ class Nav extends React.Component {
     this.isAuthPage = this.isAuthPage.bind(this);
     this.authButtons = this.authButtons.bind(this);
     this.usersName = this.usersName.bind(this);
+    this.usersId = this.usersId.bind(this);
   }
 
   isAuthPage() {
@@ -18,6 +19,10 @@ class Nav extends React.Component {
 
   usersName() {
     return this.props.currentUser ? this.props.currentUser.username : undefined;
+  }
+
+  usersId() {
+    return this.props.currentUser ? this.props.currentUser.id : undefined;
   }
 
   authButtons() {
@@ -37,7 +42,7 @@ class Nav extends React.Component {
     } else {
       return(
         <div className='nav-buttons'>
-          <Link to={`/user/${this.usersName()}`} className="nav-greeting">{this.usersName()}</Link>
+          <Link to={`/profile/${this.usersId()}`} className="nav-greeting">{this.usersName()}</Link>
           <button className="log-out" onClick={this.props.logout}>Log out</button>
         </div>
       );
