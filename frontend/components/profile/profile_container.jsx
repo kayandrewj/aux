@@ -7,8 +7,8 @@ import { fetchArtistAlbums } from '../../actions/album_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    artistAlbums: state.albums,
-    targetProfile: ownProps.location.pathname,
+    artistAlbums: state.albums.artistAlbums,
+    targetProfilePath: ownProps.location.pathname,
   };
 };
 

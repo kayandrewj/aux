@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfileAlbumItem from './profile_album_item';
+
 
 class ProfileIndex extends React.Component {
   constructor(props) {
     super(props);
-
     this.username = this.username.bind(this);
-    this.renderIndex = this.renderIndex.bind(this);
     this.targetProfileId = this.targetProfileId.bind(this);
   }
 
   targetProfileId() {
-    return parseInt(this.props.targetProfile.match(/(\d+$)/)[0]);
+    if (this.props.targetProfilePath) {
+      return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
+    }
   }
 
   componentDidMount() {
@@ -22,23 +24,30 @@ class ProfileIndex extends React.Component {
     return this.props.currentUser ? this.props.currentUser.username : undefined;
   }
 
-  renderIndex() {
-    //returns <ul> of <li>, each of which contains an href to the album view
-  }
-
-
   render() {
-    // TODO: render albums here; they should be in state. (so they should be in props as objects nested in a larger object under keys of their ID)
-    // this.props.artistAlbums
-    // in state they are state.albums.artistAlbums
-    // they probably need to be objects in an array; build a selector for them
+    let albums;
+    if (this.props.artistAlbums) {
+      albums = Object.keys(this.props.artistAlbums).map(id => (
+        <ProfileAlbumItem
+          album={this.props.artistAlbums[id]}
+          key={ id } />
+        )
+      );
+    }
+    return (
+      <div className="album-index">
+        {this.targetProfileId() === this.props.currentUser.id ?
+          <Link to={this.props.targetProfilePath} className="profile-edit">
+            Edit Profile
+          </Link>
+            :
+          undefined
+        }
+        { albums }
 
-    //don't do line 26, find the user from the URL not the current user. it's in state.match or something
-    return(
-        <div className="album-item">
-          <h2 className="artist-album-index-header">{this.username()}</h2>
-        </div>
+      </div>
     );
+
   }
 }
 
