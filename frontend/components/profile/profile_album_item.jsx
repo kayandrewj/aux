@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class ProfileAlbumItem extends React.Component {
   constructor(props) {
@@ -9,11 +11,7 @@ class ProfileAlbumItem extends React.Component {
     return(
       <li className="profile-album">
         <img src={ this.props.album.artwork} />
-        <Link to=
-
-    {this.props.album.title}
-
-
+        <Link to={`/album/${this.props.album.id}`}>{this.props.album.title}</Link>
       </li>
     );
   }
