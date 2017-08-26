@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import sessionReducer from './session_reducer';
+import AlbumReducer from './album_reducer';
 
 const RootReducer = combineReducers({
-  session: sessionReducer
+  session: sessionReducer,
+  albums: AlbumReducer
 });
 
 export default RootReducer;

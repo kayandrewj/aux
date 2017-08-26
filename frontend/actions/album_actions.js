@@ -2,14 +2,14 @@ import * as AlbumApiUtil from '../util/album_api_util';
 
 export const RECEIVE_ARTIST_ALBUMS = "RECEIVE_ARTIST_ALBUMS";
 
-export const receiveArtistAlbums = (albums) => {
+export const receiveArtistAlbums = (artistAlbums) => {
   return {
     type: RECEIVE_ARTIST_ALBUMS,
-    albums
+    artistAlbums,
   };
 };
 
-export const fetchArtistAlbums = artistId => {
+export const fetchArtistAlbums = artistId => dispatch => {
   AlbumApiUtil.fetchArtistAlbums(artistId).then(
     albums => dispatch(receiveArtistAlbums(albums))
   );
