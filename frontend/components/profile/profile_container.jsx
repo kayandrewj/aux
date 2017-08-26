@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import ProfileIndex from './profile_index';
+import Profile from './profile';
 import { fetchArtistAlbums } from '../../actions/album_actions';
 
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileIndex));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));

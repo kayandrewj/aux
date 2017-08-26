@@ -8,7 +8,7 @@ import ProfileContainer from './profile/profile_container';
 
 const App = () => {
   return (
-    <div className='session-form-wrapper'>
+    <div className='app'>
 
 
 
