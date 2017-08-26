@@ -5,6 +5,7 @@ import { fetchArtistAlbums } from '../../actions/album_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     currentUser: state.session.currentUser,
     artistAlbums: state.albums.artistAlbums
