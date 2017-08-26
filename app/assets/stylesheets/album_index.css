@@ -1,3 +1,11 @@
 .album-index {
   margin-top: 120px;
 }
+
+.artist-album-index-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  margin-left: 20vw;
+  margin-top: 30px;
+}
