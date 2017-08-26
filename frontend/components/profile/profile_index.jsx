@@ -25,6 +25,7 @@ class ProfileIndex extends React.Component {
   }
 
   render() {
+    debugger
     let albums;
     if (this.props.artistAlbums) {
       albums = Object.keys(this.props.artistAlbums).map(id => (
@@ -36,8 +37,8 @@ class ProfileIndex extends React.Component {
     }
     return (
       <div className="album-index">
-        {this.targetProfileId() === this.props.currentUser.id ?
-          <Link to={this.props.targetProfilePath} className="profile-edit">
+        {this.props.currentUser && (this.targetProfileId() === this.props.currentUser.id) ?
+          <Link to={`/profile/${this.targetProfileId()}`} className="profile-edit">
             Edit Profile
           </Link>
             :
