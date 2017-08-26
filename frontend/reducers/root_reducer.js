@@ -4,7 +4,8 @@ import AlbumReducer from './album_reducer';
 
 const RootReducer = combineReducers({
   session: sessionReducer,
-  albums: AlbumReducer
+  albums: AlbumReducer,
+  targetUser: UserReducer
 });
 
 export default RootReducer;
