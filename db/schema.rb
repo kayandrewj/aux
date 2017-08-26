@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825192153) do
+ActiveRecord::Schema.define(version: 20170826211416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,11 @@ ActiveRecord::Schema.define(version: 20170825192153) do
     t.integer "user_id", null: false
     t.string "band", null: false
     t.text "bio"
-    t.string "header_img"
     t.string "profile_color"
+    t.string "header_file_name"
+    t.string "header_content_type"
+    t.integer "header_file_size"
+    t.datetime "header_updated_at"
     t.index ["band"], name: "index_artist_profiles_on_band"
     t.index ["user_id"], name: "index_artist_profiles_on_user_id", unique: true
   end

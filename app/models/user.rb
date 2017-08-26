@@ -10,7 +10,6 @@
 #  is_artist       :boolean          default(FALSE), not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  album_id        :integer
 #
 
 class User < ApplicationRecord

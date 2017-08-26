@@ -19,7 +19,7 @@ user_id       | integer   | not null (foreign key, references users), unique, in
 band_name     | string    | not null, indexed
 bio           | text      |
 location_id   | integer   |
-header_img    | string    |
+header        | aws media |
 profile_color | string    |
 
 ## albums
@@ -28,7 +28,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references artists), indexed
 title       | string    | not null
-art_url     | string    |
+artwork     | aws media |
 
 ## tracks
 column name | data type | details

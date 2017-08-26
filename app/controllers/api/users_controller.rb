@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
   private
 
   def artist_profile_params
-    params.require(:user).permit(:band, :bio, :header_img, :profile_color)
+    params.require(:user).permit(:band, :bio, :header, :profile_color)
   end
 
   def user_params
