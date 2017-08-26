@@ -9,9 +9,11 @@ class ProfileAlbumItem extends React.Component {
 
   render() {
     return(
-      <li className="profile-album">
-        <img src={ this.props.album.artwork} />
-        <Link to={`/album/${this.props.album.id}`}>{this.props.album.title}</Link>
+      <li className="profile-album-box">
+        <Link to={`/album/${this.props.album.id}`}>
+        <img className="profile-album-img" src={ this.props.album.artwork} />
+        <p className="profile-album-text">{this.props.album.title}</p>
+      </Link>
       </li>
     );
   }
