@@ -7,8 +7,16 @@ class ProfileIndex extends React.Component {
 
     this.username = this.username.bind(this);
     this.renderIndex = this.renderIndex.bind(this);
+    this.targetProfileId = this.targetProfileId.bind(this);
   }
 
+  targetProfileId() {
+    return parseInt(this.props.targetProfile.match(/(\d+$)/)[0]);
+  }
+
+  componentDidMount() {
+    this.props.fetchArtistAlbums(this.targetProfileId());
+  }
 
   username() {
     return this.props.currentUser ? this.props.currentUser.username : undefined;
