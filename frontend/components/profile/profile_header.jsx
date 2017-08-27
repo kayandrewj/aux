@@ -6,11 +6,27 @@ class ProfileHeader extends React.Component {
 
     this.targetProfileHeader = this.targetProfileHeader.bind(this);
     this.targetProfileId = this.targetProfileId.bind(this);
+    this.userProfileHeader = this.userProfileHeader.bind(this);
+  }
+
+
+  userProfileHeader() {
+    if (this.props.currentUser) {
+      return (
+        <div className="profile-header">
+          <img src={this.props.currentUser.header} className="user-header-img"/>
+        </div>
+      );
+    }
   }
 
   targetProfileHeader() {
     if (this.props.targetArtistProfile) {
-      return <img src={this.props.targetArtistProfile.header} className="header-img"/>;
+      return (
+        <div className="profile-header">
+          <img src={this.props.targetArtistProfile.header} className="header-img"/>
+        </div>
+      );
     }
   }
 
@@ -26,8 +42,8 @@ class ProfileHeader extends React.Component {
 
   render() {
     return (
-      <div className="profile-header">
-        {this.targetProfileHeader()}
+      <div>
+        {this.props.targetArtistProfile && this.props.targetArtistProfile.is_artist ? this.targetProfileHeader() : this.userProfileHeader()}
       </div>
     );
   }
