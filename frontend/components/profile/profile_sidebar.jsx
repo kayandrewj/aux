@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ProfileSidebar extends React.Component {
   constructor(props) {
@@ -28,12 +29,24 @@ class ProfileSidebar extends React.Component {
     if (this.props.targetArtistProfile) {
       return (
         <div className="profile-sidebar-info">
-          <p classname="profile-sidebar-location">
+          <p className="profile-sidebar-bandname">
+            {this.props.targetArtistProfile.band}
+          </p>
+          <p className="profile-sidebar-location">
             {this.props.targetArtistProfile.location}
           </p>
           <p className="profile-sidebar-bio">
             {this.props.targetArtistProfile.bio}
           </p>
+
+          {this.props.currentUser && (this.targetProfileId() === this.props.currentUser.id) ?
+            <Link to={`/profile/${this.targetProfileId()}`} className="profile-edit">
+              Edit Profile
+            </Link>
+              :
+            undefined
+          }
+
         </div>
       );
     }

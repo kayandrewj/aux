@@ -36,15 +36,7 @@ class ProfileIndex extends React.Component {
     }
     return (
       <div className="profile-index">
-        {this.props.currentUser && (this.targetProfileId() === this.props.currentUser.id) ?
-          <Link to={`/profile/${this.targetProfileId()}`} className="profile-edit">
-            Edit Profile
-          </Link>
-            :
-          undefined
-        }
         { albums }
-
       </div>
     );
 
