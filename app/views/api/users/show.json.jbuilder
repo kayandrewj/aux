@@ -1,4 +1,3 @@
-debugger
 json.partial!('/api/users/user', user: @user)
 
 if @user.is_artist
