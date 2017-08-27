@@ -5,7 +5,6 @@ import ProfileHeader from './profile_header';
 import ProfileSidebar from './profile_sidebar';
 
 const Profile = (props) => {
-    debugger
     return(
       <div className="artist-profile">
 
@@ -25,12 +24,16 @@ const Profile = (props) => {
         targetUser={props.targetUser}
       />
 
+    {props.currentUser && props.currentUser.is_artist ?
         <ProfileIndex
           currentUser={props.currentUser}
           artistAlbums={props.artistAlbums}
           targetProfilePath={props.location.pathname}
           fetchArtistAlbums={props.fetchArtistAlbums}
           />
+      :
+        undefined
+      };
 
       </div>
     );
