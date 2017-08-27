@@ -1,0 +1,19 @@
+.profile-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.user-header-img {
+  max-width: 2000px;
+  height: auto;
+  z-index: 1;
+}
+
+.profile-avatar {
+  width: 192px;
+  height: 192px;
+  z-index: 20;
+}
