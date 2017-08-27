@@ -13,6 +13,7 @@ const Profile = (props) => {
           fetchUser={props.fetchUser}
           targetUser={props.targetUser}
           targetArtistProfile={props.targetArtistProfile}
+          currentUser={props.currentUser}
 
         />
 
@@ -24,7 +25,7 @@ const Profile = (props) => {
         targetUser={props.targetUser}
       />
 
-    {props.currentUser && props.currentUser.is_artist ?
+    {props.targetArtistProfile ?
         <ProfileIndex
           currentUser={props.currentUser}
           artistAlbums={props.artistAlbums}
@@ -33,7 +34,7 @@ const Profile = (props) => {
           />
       :
         undefined
-      };
+      }
 
       </div>
     );
