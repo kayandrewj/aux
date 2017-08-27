@@ -18,7 +18,7 @@ class ProfileHeader extends React.Component {
   userProfileHeader() {
     if (this.props.currentUser) {
       return (
-        <div className="profile-header">
+        <div className="user-profile-header">
           <img src={this.props.currentUser.header} className="user-header-img"/>
         </div>
       );

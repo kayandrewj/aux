@@ -21,7 +21,7 @@ class ProfileSidebar extends React.Component {
   userProfileAvatar() {
     if (this.props.currentUser) {
       return (
-        <div className="profile-avatar">
+        <div className="user-profile-avatar">
           <img src={this.props.currentUser.avatar} className="user-avatar-img"/>
         </div>
       );
@@ -32,7 +32,7 @@ class ProfileSidebar extends React.Component {
     if (this.props.targetArtistProfile) {
       return(
         <div className="profile-avatar">
-          <img src={this.props.targetArtistProfile.avatar} className="avatar-img"/>;
+          <img src={this.props.targetArtistProfile.avatar} className="avatar-img"/>
         </div>
       );
     }

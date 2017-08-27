@@ -1,4 +1,4 @@
-.profile-header {
+.user-profile-header {
   position: absolute;
   left: 0;
   right: 0;
@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.profile-avatar {
+.user-profile-avatar {
   width: 192px;
   height: 192px;
   z-index: 20;
