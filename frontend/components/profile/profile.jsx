@@ -2,8 +2,10 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import ProfileIndex from './profile_index';
 import ProfileHeader from './profile_header';
+import ProfileSidebar from './profile_sidebar';
 
 const Profile = (props) => {
+    debugger
     return(
       <div className="artist-profile">
 
@@ -14,6 +16,14 @@ const Profile = (props) => {
           targetArtistProfile={props.targetArtistProfile}
 
         />
+
+      <ProfileSidebar
+        targetProfilePath={props.location.pathname}
+        currentUser={props.currentUser}
+        targetArtistProfile={props.targetArtistProfile}
+        fetchUser={props.fetchUser}
+        targetUser={props.targetUser}
+      />
 
         <ProfileIndex
           currentUser={props.currentUser}
