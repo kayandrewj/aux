@@ -1,8 +1,8 @@
 .nav-god {
   display:flex;
   flex-direction: row;
-  border-top: 5px solid #a5efe0;
-  background-color: #212121;
+  border-top: 5px solid rgb(0,161,198);
+  background-color: #ececec;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@
 }
 
 .nav-button {
-  color: #fefefe;
+  color: #333333;
 }
 
 .nav-links {
@@ -32,7 +32,7 @@
 
 
 .nav-links > * {
-  color: #fefefe;
+  color: #333333;
   padding: 12px;
   align-items: flex-end;
   padding-right: 25px;
@@ -40,8 +40,8 @@
 
 
 .log-out {
+  background-color: transparent;
   border: none;
-  color: #fefefe;
   padding: 12px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -54,12 +54,9 @@
   padding-bottom: 14px;
 }
 
-.log-out:hover {
-  background-color: transparent;
-}
 
 .nav-greeting {
-  color: #fefefe;
+
   font-weight: 400;
   font-size: 16px;
 }

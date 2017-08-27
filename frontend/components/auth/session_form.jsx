@@ -60,9 +60,9 @@ class SessionForm extends React.Component {
     if (this.props.formType === '/login') {
       return (<h6>
         Sign up for a
-        &nbsp;<Link to={'/signup'}>fan</Link>&nbsp;
+        <Link className="sign-up-prompt" to={'/signup'}>fan</Link>
         or
-        &nbsp;<Link to={'/band'}> artist </Link>&nbsp;
+        <Link className="sign-up-prompt" to={'/band'}> artist </Link>
         account.
       </h6>);
     } else {

@@ -21,7 +21,7 @@
 
 body {
   margin-top: 100px;
-  background-color: #fefefe;
+  background-color: #ffffff;
   align-content: center;
 }
 
@@ -34,7 +34,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 56px;
-  color: white;
+  color: #333333;
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
   -webkit-margin-start: 0px;
@@ -42,23 +42,22 @@ body {
   display: flex;
   align-items: center;
   height: 80px;
-  background-color: #212121;
   width: auto;
   margin: 0;
 }
 
 .form-type {
+  width: 584px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 28px;
-  color: #212121;
-  border-bottom: 3px solid #212121;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 2px dotted #ccc;
   margin: 0 auto;
-  padding-top: 24px;
-  padding-bottom: 18px;
+  padding-top: 53px;
+  padding-bottom: 39px;
   margin-bottom: 0px;
   margin-top: 24px;
-  width: 256px;
   display: flex;
   justify-content: center;
 
@@ -66,7 +65,7 @@ body {
 
 .session-form {
   display: flex;
-  width: 500px;
+  width: 584px;
   margin: 0 auto;
   flex-direction: column;
 
@@ -76,68 +75,72 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
+  height: auto;
 }
 
 
 .session-question {
+  color: #818285;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 256px;
   height: 150px;
-  padding-top: 18px;
+  padding-top: 64px;
   margin: 0 auto;
 }
 
 h6 {
+  margin: 0 0 18px 0;
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
+  -webkit-margin-after: 0px;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   padding: 9px;
+  color: #818285
+
 }
 
 input {
-  color: black;
-  padding: 6px;
-  margin: 9px;
-  width: 172px;
-  border: 1.5px solid black;
-  border: 1.5px solid black;
+  height: 35px;
+  padding-left: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
   font-size: 16px;
-  font-weight: 400;
-}
-
-input:focus {
-  outline: 1;
-  outline-color: black;
-  outline-style: ridge;
+  transition: border 0.3s;
+  margin: 12px;
 }
 
 button {
   border: none;
   box-shadow: none;
   background: none;
-  border: 3px solid black;
-  padding: 6px;
+  border: none;
+  padding: 0 1em;
   margin: 9px;
   margin-top: 38px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  width: 256px;
-  font-size: 18px;
-  transition: ease .2s;
+  width: 300px;
+  height: 36px;
+  font-size: 16px;
+  background-color: rgb(0,161,198);
 }
 
 .demo-button {
+  background-color: transparent;
+  color: rgb(0,161,198);
   margin-top: 7px;
   border: none;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   height: 28px;
   width: 96px;
@@ -146,32 +149,29 @@ button {
   text-decoration: underline;
 }
 
-.demo-button:hover {
-  background-color: transparent;
-  color: #676767;
-}
-
 button:hover {
-  background-color: #a5efe0;
   cursor: pointer;
-
-}
-
-button:focus {
-  outline: 0;
 }
 
 a {
-  color: #212121;
+  color: #333333;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-decoration: underline;
 }
 
+.sign-up-prompt {
+  font-size: 12px;
+  color: #818285;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 2px 0 2px
+}
+
+
 .error-box {
   display: flex;
   justify-content: center;
-  height: 48px;
+  min-height: 19px;
   padding: 9px;
 }
 

@@ -16,6 +16,37 @@
   height: auto;
   max-width: 1000px;
   max-height: 180px;
+}
+
+.artist-profile {
+  width: 1000px;
   margin-left: 20vw;
   margin-right: 20vw;
+}
+
+.profile-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.profile-album-box {
+  list-style: none;
+  padding: 18px;
+}
+
+.profile-album-img {
+  width: auto;
+  height: auto;
+  max-width: 234px;
+  max-height: 234px;
+}
+
+.profile-album-text {
+  margin: 0.7em 0 0.3em 0;
+}
+
+.profile-edit {
+
 }
