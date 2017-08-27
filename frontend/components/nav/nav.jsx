@@ -28,23 +28,23 @@ class Nav extends React.Component {
   authButtons() {
     if (this.isAuthPage()) {
       return(
-        <div className='nav-buttons'>
+        <span className='nav-links'>
           <Link to={'/no/help/for/you'}>Help</Link>
-        </div>
+        </span>
       );
     } else if (!this.isAuthPage() && !this.props.loggedIn) {
       return(
-        <div className='nav-buttons'>
+        <span className='nav-links'>
           <Link to={'/login'}>Login</Link>
           <Link to={'/signup'}>Sign Up</Link>
-        </div>
+        </span>
       );
     } else {
       return(
-        <div className='nav-buttons'>
+        <span className='nav-links'>
           <Link to={`/profile/${this.usersId()}`} className="nav-greeting">{this.usersName()}</Link>
           <button className="log-out" onClick={this.props.logout}>Log out</button>
-        </div>
+        </span>
       );
     }
   }
@@ -53,12 +53,14 @@ class Nav extends React.Component {
   return(
 
     <div className="nav-god">
-      <h1>
-        <Link to={'/'} className="logo">AUX</Link>
-      </h1>
-      <span>
-        {this.authButtons()}
-      </span>
+      <div className="menu-bar">
+        <h1>
+          <Link to={'/'} className="logo">AUX</Link>
+        </h1>
+        <div className="nav-button">
+          {this.authButtons()}
+        </div>
+      </div>
     </div>
 
     );

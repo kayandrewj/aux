@@ -1,10 +1,7 @@
 .nav-god {
-  background-color: #a5efe0;
   display:flex;
   flex-direction: row;
-  border-bottom: 12px solid #a5efe0;
-  justify-content: space-between;
-  align-items: center;
+  border-top: 5px solid #a5efe0;
   background-color: #212121;
   position: fixed;
   top: 0;
@@ -14,18 +11,31 @@
 
 }
 
-.nav-buttons {
+.menu-bar {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: #fefefe;
+  flex-direction: row;
+  width: 1000px;
+  min-width: 1000px;
+  margin-left: 20vw;
   margin-right: 20vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-button {
+  color: #fefefe;
+}
+
+.nav-links {
+  margin-right: 18px;
 }
 
 
-.nav-buttons > * {
+.nav-links > * {
   color: #fefefe;
   padding: 12px;
+  align-items: flex-end;
+  padding-right: 25px;
 }
 
 
@@ -41,7 +51,7 @@
   font-weight: 400;
   width: auto;
   height: auto;
-  padding-bottom: 13px;
+  padding-bottom: 14px;
 }
 
 .log-out:hover {
