@@ -8,6 +8,7 @@
   left: 0;
   z-index: 999;
   width: 100%;
+  border-bottom: 1px dotted #818285;
 
 }
 
@@ -15,9 +16,9 @@
   display: flex;
   flex-direction: row;
   width: 1000px;
-  min-width: 1000px;
+  max-width: 1000px;
   margin-left: 20vw;
-  margin-: 20vw;
+  margin-right: 20vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -36,7 +37,7 @@
   color: #333333;
   padding: 12px;
   align-items: flex-end;
-  
+
 }
 
 
