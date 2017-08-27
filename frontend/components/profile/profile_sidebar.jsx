@@ -22,7 +22,6 @@ class ProfileSidebar extends React.Component {
   }
 
   componentWillMount() {
-    debugger
     this.props.fetchUser(this.targetProfileId());
   }
 
@@ -31,6 +30,11 @@ class ProfileSidebar extends React.Component {
     return(
       <div className="profile-avatar">
         {this.targetProfileAvatar()}
+        <div className="profile-sidebar-info">
+
+
+
+        </div>
       </div>
     );
   }
