@@ -17,7 +17,7 @@
   width: 1000px;
   min-width: 1000px;
   margin-left: 20vw;
-  margin-right: 20vw;
+  margin-: 20vw;
   justify-content: space-between;
   align-items: center;
 }
@@ -28,6 +28,7 @@
 
 .nav-links {
   margin-right: 18px;
+  height: 100%;
 }
 
 
@@ -35,7 +36,7 @@
   color: #333333;
   padding: 12px;
   align-items: flex-end;
-  padding-right: 25px;
+  
 }
 
 

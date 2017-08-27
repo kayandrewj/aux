@@ -1,0 +1,42 @@
+.profile-sidebar {
+  font-family: 'Roboto', sans-serif;
+  color: #82838C;
+  width: 123px;
+  float: right;
+  margin-top: 45px;
+}
+
+.avatar-img {
+  width: auto;
+  height: auto;
+  max-width: 123px;
+}
+
+.profile-avatar {
+  background-color: #ececec;
+}
+
+.profile-sidebar-info {
+  margin-top: 11px;
+
+}
+
+.profile-sidebar-bandname {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 3px;
+}
+
+.profile-sidebar-location {
+  font-size: 12px;
+  margin: 0 0 16px;
+}
+
+.profile-sidebar-bio {
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.profile-edit {
+  font-size: 14px;
+}
