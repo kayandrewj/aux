@@ -6,7 +6,7 @@ class ProfileSidebar extends React.Component {
 
     this.targetProfileId = this.targetProfileId.bind(this);
     this.targetProfileAvatar = this.targetProfileAvatar.bind(this);
-    this.targetProfileBio = this.targetProfileBio.bind(this);
+    this.targetProfileInfo = this.targetProfileInfo.bind(this);
   }
 
 
@@ -22,12 +22,19 @@ class ProfileSidebar extends React.Component {
     }
   }
 
-  targetProfileBio() {
+
+
+  targetProfileInfo() {
     if (this.props.targetArtistProfile) {
       return (
-        <p className="profile-sidebar-bio">
-          {this.props.targetArtistProfile.bio}
-        </p>
+        <div className="profile-sidebar-info">
+          <p classname="profile-sidebar-location">
+            {this.props.targetArtistProfile.location}
+          </p>
+          <p className="profile-sidebar-bio">
+            {this.props.targetArtistProfile.bio}
+          </p>
+        </div>
       );
     }
   }
@@ -38,16 +45,16 @@ class ProfileSidebar extends React.Component {
 
   render() {
     return(
-      <div className="profile-avatar">
-        {this.targetProfileAvatar()}
-        <div className="profile-sidebar-info">
-          <p className="profile-sidebar-bio">
-            {this.targetProfileBio()}
-          </p>
-
-
+      <div className="profile-sidebar">
+        <div className="profile-avatar">
+          {this.targetProfileAvatar()}
         </div>
+        {this.targetProfileInfo()}
       </div>
+
+
+
+
     );
   }
 }
