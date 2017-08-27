@@ -6,11 +6,13 @@ import { fetchUser } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     currentUser: state.session.currentUser,
     artistAlbums: state.albums.artistAlbums,
     targetProfilePath: ownProps.location.pathname,
     targetUser: state.targetUser,
+    targetArtistProfile: state.targetUser.targetUser,
   };
 };
 

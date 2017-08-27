@@ -11,6 +11,7 @@ const Profile = (props) => {
           targetProfilePath={props.location.pathname}
           fetchUser={props.fetchUser}
           targetUser={props.targetUser}
+          targetArtistProfile={props.targetArtistProfile}
 
         />
 

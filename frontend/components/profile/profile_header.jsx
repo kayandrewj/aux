@@ -4,10 +4,15 @@ class ProfileHeader extends React.Component {
   constructor(props) {
     super(props);
 
+    this.targetProfileHeader = this.targetProfileHeader.bind(this);
     this.targetProfileId = this.targetProfileId.bind(this);
   }
-   // get id of user from this.props.targetProfilePath
-  // then get image from the user with that ID
+
+  targetProfileHeader() {
+    if (this.props.targetArtistProfile) {
+      return <img src={this.props.targetArtistProfile.header}/>;
+    }
+  }
 
   targetProfileId() {
     if (this.props.targetProfilePath) {
@@ -19,10 +24,12 @@ class ProfileHeader extends React.Component {
     this.props.fetchUser(this.targetProfileId());
   }
 
-
   render() {
+    debugger
     return (
-      <div>header here</div>
+      <div className="profile-header">
+        {this.targetProfileHeader()}
+      </div>
     );
   }
 }
