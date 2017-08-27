@@ -9,7 +9,9 @@ const Profile = (props) => {
 
         <ProfileHeader
           targetProfilePath={props.location.pathname}
-          
+          fetchUser={props.fetchUser}
+          targetUser={props.targetUser}
+
         />
 
         <ProfileIndex
