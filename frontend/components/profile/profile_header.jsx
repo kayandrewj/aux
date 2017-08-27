@@ -10,7 +10,7 @@ class ProfileHeader extends React.Component {
 
   targetProfileHeader() {
     if (this.props.targetArtistProfile) {
-      return <img src={this.props.targetArtistProfile.header}/>;
+      return <img src={this.props.targetArtistProfile.header} className="header-img"/>;
     }
   }
 
@@ -25,7 +25,6 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="profile-header">
         {this.targetProfileHeader()}
