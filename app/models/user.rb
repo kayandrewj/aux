@@ -20,6 +20,9 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "https://d30y9cdsu7xlg0.cloudfront.net/png/1046-200.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  has_attached_file :header, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "http://i.imgur.com/Pfhtx17.jpg"
+  validates_attachment_content_type :header, content_type: /\Aimage\/.*\Z/
+
 
   has_one :artist_profile, inverse_of: :user
   has_many :albums
