@@ -9,6 +9,11 @@ class ProfileHeader extends React.Component {
     this.userProfileHeader = this.userProfileHeader.bind(this);
   }
 
+  targetProfileId() {
+    if (this.props.targetProfilePath) {
+      return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
+    }
+  }
 
   userProfileHeader() {
     if (this.props.currentUser) {
@@ -27,12 +32,6 @@ class ProfileHeader extends React.Component {
           <img src={this.props.targetArtistProfile.header} className="header-img"/>
         </div>
       );
-    }
-  }
-
-  targetProfileId() {
-    if (this.props.targetProfilePath) {
-      return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
     }
   }
 
