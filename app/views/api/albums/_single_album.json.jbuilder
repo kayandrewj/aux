@@ -1,1 +1,1 @@
-json.extract!(album, :user_id, :title, :artwork)
+json.extract!(displayAlbum, :user_id, :title, :artwork)
