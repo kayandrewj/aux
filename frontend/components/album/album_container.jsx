@@ -10,6 +10,8 @@ const mapStateToProps = (state, ownProps) => {
     album: state.albums.displayAlbum,
     artistAlbums: state.albums.artistAlbums,
     targetArtistProfile: state.targetUser.targetUser,
+    targetProfilePath: ownProps.location.pathname,
+
   };
 };
 
