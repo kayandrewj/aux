@@ -23,10 +23,17 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  // for handling input
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state, this.isArtist());
+    const newState = {};
+    newState.artist_profile_attributes = {
+      band: this.state.band,
+    };
+    newState.bio = this.state.bio;
+    newState.username = this.state.username;
+    newState.password = this.state.password;
+    newState.email = this.state.email;
+    const user = Object.assign(newState, this.isArtist());
     this.props.processForm(user);
   }
 
