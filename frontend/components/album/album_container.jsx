@@ -2,14 +2,13 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Album from './album';
 import { fetchAlbum } from '../../actions/album_actions';
-import { fetchArtistAlbums } from '../../util/album_api_util';
+import { fetchArtistAlbums } from '../../actions/album_actions';
 import { fetchUser } from '../../util/user_api_util';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     album: state.albums.displayAlbum,
     artistAlbums: state.albums.artistAlbums,
-    targetProfilePath: ownProps.location.pathname,
   };
 };
 
