@@ -1,1 +1,4 @@
-json.partial!('/api/albums/single_album', displayAlbum: @album)
+json.displayAlbum do
+  json.(@album, :title, :artwork)
+  json.(@album.user.artist_profile, :band)
+end
