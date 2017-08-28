@@ -18,13 +18,11 @@ class ProfileIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchArtistAlbums(this.props.match.params.userId);
   }
 
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.fetchArtistAlbums(nextProps.match.params.userId);
     }
