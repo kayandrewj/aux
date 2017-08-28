@@ -1,0 +1,36 @@
+.album {
+  max-width: 1000px;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  display: flex;
+}
+
+.album-art-img {
+  width: auto;
+  height: auto;
+  max-width: 352px;
+  max-height: 352px;
+}
+
+.album-sidebar {
+  width: 120px;
+  font-size: 12px;
+  float: right;
+  margin-top: 248px;
+}
+
+.album-sidebar a {
+  color: #0687F5;
+}
+
+.sidebar-album-img {
+  width: auto;
+  height: auto;
+  max-width: 120px;
+  max-height: 120px;
+}
+
+li {
+  list-style: none;
+}

@@ -18,9 +18,10 @@
 }
 
 .artist-profile {
-  width: 1000px;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%
 }
 

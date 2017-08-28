@@ -25,21 +25,17 @@
 
 .nav-button {
   color: #333333;
+  width: auto;
 }
 
-.nav-links {
-  margin-right: 18px;
+.nav-links a {
+  padding: 12px;
   height: 100%;
 }
 
-
-.nav-links > * {
-  color: #333333;
-  padding: 12px;
-  align-items: flex-end;
-
+.nav-links:last-child {
+  padding-right: 0px;
 }
-
 
 .log-out {
   background-color: transparent;
