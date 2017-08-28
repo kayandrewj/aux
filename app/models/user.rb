@@ -2,14 +2,24 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  is_artist       :boolean          default(FALSE), not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                  :integer          not null, primary key
+#  username            :string           not null
+#  email               :string           not null
+#  password_digest     :string           not null
+#  session_token       :string           not null
+#  is_artist           :boolean          default(FALSE), not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  bio                 :text
+#  location            :string
+#  header_file_name    :string
+#  header_content_type :string
+#  header_file_size    :integer
+#  header_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -26,6 +36,7 @@ class User < ApplicationRecord
 
   has_one :artist_profile, inverse_of: :user
   has_many :albums
+  accepts_nested_attributes_for :artist_profile
 
   after_initialize :ensure_session_token
   attr_reader :password
@@ -57,8 +68,5 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
-
-
-
 
 end
