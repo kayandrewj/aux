@@ -41,7 +41,6 @@ class ProfileHeader extends React.Component {
 
 
   render() {
-    debugger
     return (
       <div>
         {this.props.targetArtistProfile && this.props.targetArtistProfile.is_artist ? this.targetProfileHeader() : this.userProfileHeader()}

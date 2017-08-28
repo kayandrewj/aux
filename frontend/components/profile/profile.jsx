@@ -5,7 +5,6 @@ import ProfileHeader from './profile_header';
 import ProfileSidebar from './profile_sidebar';
 
 const Profile = (props) => {
-  debugger
     return(
       <div className="artist-profile">
 

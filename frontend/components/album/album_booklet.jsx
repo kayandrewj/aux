@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 class AlbumBooklet extends React.Component {
   constructor(props) {
     super(props);
-    this.albumArt = this.albumArt.bind(this)
+    this.albumArt = this.albumArt.bind(this);
   }
 
   componentDidMount() {
@@ -15,7 +15,6 @@ class AlbumBooklet extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.albumId !== nextProps.match.params.albumId) {
       this.props.fetchAlbum(nextProps.match.params.albumId);
-      // how to get the user that owns the album. send up in jbuilder probably
     }
   }
 
@@ -30,7 +29,6 @@ class AlbumBooklet extends React.Component {
   }
 
   render() {
-    debugger
     return(
     <div className="album-booklet">
       {this.albumArt()}
