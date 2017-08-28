@@ -13,7 +13,6 @@ const App = () => {
 
         <Route path="/album/:albumId" component={AlbumContainer} />
         <Route path="/profile/:userId" component={ProfileContainer} />
-        <Route exact path="/band" component={SessionFormContainer} />
         <Route path="/" component={NavContainer} />
 
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
