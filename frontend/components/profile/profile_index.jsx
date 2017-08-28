@@ -8,13 +8,6 @@ class ProfileIndex extends React.Component {
   constructor(props) {
     super(props);
     this.username = this.username.bind(this);
-    this.targetProfileId = this.targetProfileId.bind(this);
-  }
-
-  targetProfileId() {
-    if (this.props.targetProfilePath) {
-      return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
-    }
   }
 
   componentDidMount() {
