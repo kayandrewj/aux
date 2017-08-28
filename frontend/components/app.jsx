@@ -13,8 +13,7 @@ const App = () => {
 
 
 
-        <Route path="/profile" component={ProfileContainer} />
-        <Route path="/album" component={AlbumContainer} />
+        <Route path="/profile/:userId" component={ProfileContainer} />
         <Route exact path="/band" component={SessionFormContainer} />
         <Route path="/" component={NavContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
@@ -25,3 +24,8 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+// <Route path="/album" component={AlbumContainer} />

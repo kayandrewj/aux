@@ -1,18 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
     super(props);
 
     this.targetProfileHeader = this.targetProfileHeader.bind(this);
-    this.targetProfileId = this.targetProfileId.bind(this);
     this.userProfileHeader = this.userProfileHeader.bind(this);
-  }
-
-  targetProfileId() {
-    if (this.props.targetProfilePath) {
-      return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
-    }
   }
 
   userProfileHeader() {
@@ -36,8 +30,15 @@ class ProfileHeader extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.targetProfileId());
+    this.props.fetchUser(this.props.match.params.userId);
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.fetchUser(nextProps.match.params.userId);
+    }
+  }
+
 
   render() {
     return (
@@ -48,4 +49,4 @@ class ProfileHeader extends React.Component {
   }
 }
 
-export default ProfileHeader;
+export default withRouter(ProfileHeader);

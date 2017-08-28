@@ -67,6 +67,7 @@ class ProfileSidebar extends React.Component {
     }
   }
 
+  // change to did
   componentWillMount() {
     this.props.fetchUser(this.targetProfileId());
   }
