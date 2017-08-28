@@ -6,6 +6,8 @@ class AlbumBooklet extends React.Component {
   constructor(props) {
     super(props);
     this.albumArt = this.albumArt.bind(this);
+    this.albumInfo = this.albumInfo.bind(this);
+    this.targetProfileHeader = this.targetProfileHeader.bind(this);
   }
 
   componentDidMount() {
@@ -28,11 +30,44 @@ class AlbumBooklet extends React.Component {
     }
   }
 
+  albumInfo() {
+    if (this.props.album) {
+      return (
+        <ul className="album-info">
+          <li>
+            {this.props.album.title}
+          </li>
+          <li>
+            <Link to={`/profile/${this.props.album.user_id}`}>
+              by {this.props.album.band}
+            </Link>
+          </li>
+        </ul>
+      );
+    }
+  }
+
+  targetProfileHeader() {
+    if (this.props.album) {
+      return (
+        <div className="profile-header">
+          <img src={this.props.album.header} className="header-img"/>
+        </div>
+      );
+    }
+  }
+
   render() {
     return(
+    <div className ="artist-profile">
+      {this.targetProfileHeader()}
     <div className="album-booklet">
       {this.albumArt()}
+      <div className="album-info-box">
+        {this.albumInfo()}
+      </div>
     </div>
+  </div>
     );
   }
 }
