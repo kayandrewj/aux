@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Album from './album';
-import { fetchAlbum } from '../../util/album_api_util';
+import { fetchAlbum } from '../../actions/album_actions';
 import { fetchArtistAlbums } from '../../util/album_api_util';
 import { fetchUser } from '../../util/user_api_util';
 

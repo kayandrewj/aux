@@ -1,33 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class AlbumBooklet extends React.Component {
   constructor(props) {
     super(props);
-
-    this.targetAlbumId = this.targetAlbumId.bind(this);
-    this.targetAlbumId = this.targetAlbumId.bind(this);
-
-  }
-// gets id of target album from address bar
-  targetAlbumId() {
-    return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
+    this.albumArt = this.albumArt.bind(this)
   }
 
-// gets artist using album id
   componentDidMount() {
-    this.props.fetchUser(this.props.album.user_id);
-    // essentially move this here.
-    // this.props.fetchAlbum(this.targetAlbumId());
+    this.props.fetchAlbum(this.props.match.params.albumId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.albumId !== nextProps.match.params.albumId) {
+      this.props.fetchAlbum(nextProps.match.params.albumId);
+      // how to get the user that owns the album. send up in jbuilder probably
+    }
+  }
+
+  albumArt() {
+    if (this.props.album) {
+      return (
+        <div className="album-art-view">
+          <img src={this.props.album.artwork} className="album-art-img"/>
+        </div>
+      );
+    }
+  }
 
   render() {
     debugger
     return(
-    <div></div>
+    <div className="album-booklet">
+      {this.albumArt()}
+    </div>
     );
   }
 }
 
-export default AlbumBooklet;
+export default withRouter(AlbumBooklet);
