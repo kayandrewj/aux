@@ -4,6 +4,7 @@ import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './auth/session_form_container';
 import NavContainer from './nav/nav_container';
 import ProfileContainer from './profile/profile_container';
+import AlbumContainer from './album/album_container';
 
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
 
 
         <Route path="/profile" component={ProfileContainer} />
-
+        <Route path="/album" component={AlbumContainer} />
         <Route exact path="/band" component={SessionFormContainer} />
         <Route path="/" component={NavContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />

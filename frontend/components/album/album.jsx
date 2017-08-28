@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 const Album = (props) => {
+  debugger
   return(
     <div className="album">
 
