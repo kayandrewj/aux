@@ -57,7 +57,7 @@ class AlbumForm extends React.Component {
             <input type="file" onChange={this.updateFile}/>
           </label>
           <button>Next</button>
-          <img src={this.state.artwork}/>
+          <img src={this.state.url}/>
         </form>
 
       </div>
