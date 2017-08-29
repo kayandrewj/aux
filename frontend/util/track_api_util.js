@@ -5,3 +5,10 @@ export const createTrack = (track) => {
     data: { track },
   });
 };
+
+export const fetchAlbumTracks = (albumId) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/albums/${albumId}/tracks`
+  });
+};
