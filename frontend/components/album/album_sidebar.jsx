@@ -36,6 +36,8 @@ class AlbumSidebar extends React.Component {
   render() {
     return (
       <div className="album-sidebar">
+        <p>{this.props.album ? this.props.album.band : "loading..."}</p>
+        <p>discography</p>
         {this.renderAlbums()}
       </div>
     );
