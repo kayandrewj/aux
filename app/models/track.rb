@@ -1,4 +1,4 @@
-class ArtistProfile < ApplicationRecord
+class Track < ApplicationRecord
   validates :title, :album_id, presence: true
 
   has_attached_file :audio_file
