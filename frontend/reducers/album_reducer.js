@@ -6,10 +6,13 @@ const AlbumReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
+
     case RECEIVE_ARTIST_ALBUMS:
       return merge({}, state, { artistAlbums: action.artistAlbums });
+
     case RECEIVE_ALBUM:
       return merge({}, state, action.album, action.albumInfo);
+
     default:
       return state;
   }
