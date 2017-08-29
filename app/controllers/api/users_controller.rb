@@ -24,7 +24,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
+    @artist_profile = @user.artist_profile
     render :show
   end
 
