@@ -7,7 +7,7 @@ class Api::TracksController < ApplicationController
 
   def create
     @track = Track.new(track_params)
-    if @track.user_id == @current_user.id && Track.save!
+    if @track.album_id && @track.save!
       render json: @track
     else
       render json: @track.errors.full_messages, status: 422
