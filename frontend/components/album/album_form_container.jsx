@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import AlbumForm from './album_form';
 import { withRouter } from 'react-router-dom';
 import { createAlbum } from '../../actions/album_actions';
-import { clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
