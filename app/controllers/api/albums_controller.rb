@@ -6,9 +6,9 @@ class Api::AlbumsController < ApplicationController
   end
 
   def create
-    debugger
     @album = Album.new(album_params)
-    if @album.user_id == @current_user.id && @album.save!
+    @album.user_id = current_user.id
+    if @album.save
       render :show
     else
       render json: @album.errors.full_messages, status: 422

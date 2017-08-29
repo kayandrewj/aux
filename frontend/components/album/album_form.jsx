@@ -12,7 +12,7 @@ class AlbumForm extends React.Component {
   handleSubmit(e) {
     debugger
     e.preventDefault();
-    const album = Object.assign({}, { user_id: this.props.currentUser.id });
+    const album = Object.assign({}, this.state);
     this.props.createAlbum(album);
   }
 
