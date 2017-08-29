@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class ProfileSidebar extends React.Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class ProfileSidebar extends React.Component {
     this.targetProfileInfo = this.targetProfileInfo.bind(this);
     this.targetProfileAvatar = this.targetProfileAvatar.bind(this);
   }
-
 
   targetProfileId() {
     if (this.props.targetProfilePath) {
@@ -38,8 +38,6 @@ class ProfileSidebar extends React.Component {
     }
   }
 
-
-
   targetProfileInfo() {
     if (this.props.targetArtistProfile) {
       return (
@@ -55,13 +53,17 @@ class ProfileSidebar extends React.Component {
           </p>
 
           {this.props.currentUser && (this.targetProfileId() === this.props.currentUser.id) ?
-            <Link to={`/profile/${this.targetProfileId()}`} className="profile-edit">
-              Edit Profile
-            </Link>
+            <div className="profile-vip-links">
+              <Link to={`/profile/${this.targetProfileId()}`} className="profile-vip">
+                Edit Profile
+              </Link>
+              <Link to={`/profile/new_album/${this.targetProfileId()}`} className="profile-vip">
+                Add Music
+              </Link>
+            </div>
               :
             undefined
           }
-
         </div>
       );
     }
@@ -76,19 +78,15 @@ class ProfileSidebar extends React.Component {
       <div className="profile-sidebar">
         <div className="profile-avatar">
 
-
           {this.props.targetArtistProfile && this.props.targetArtistProfile.is_artist ? this.targetProfileAvatar() : this.userProfileAvatar()}
-
 
         </div>
         {this.targetProfileInfo()}
+
       </div>
-
-
-
 
     );
   }
 }
 
-export default ProfileSidebar;
+export default withRouter(ProfileSidebar);

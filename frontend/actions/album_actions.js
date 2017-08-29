@@ -28,3 +28,9 @@ export const fetchAlbum = albumId => dispatch => {
     album => dispatch(receiveAlbum(album))
   );
 };
+
+export const createAlbum = album => dispatch => {
+  AlbumApiUtil.createAlbum(album).then(
+    album => dispatch(receiveAlbum(album))
+  );
+};

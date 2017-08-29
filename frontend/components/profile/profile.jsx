@@ -5,6 +5,7 @@ import ProfileHeader from './profile_header';
 import ProfileSidebar from './profile_sidebar';
 
 const Profile = (props) => {
+  debugger
     return(
       <div className="artist-profile">
 
@@ -25,7 +26,7 @@ const Profile = (props) => {
         targetUser={props.targetUser}
       />
 
-    {props.targetArtistProfile && props.targetArtistProfile.is_artist ?
+    {props.targetArtistProfile && props.targetArtistProfile.is_artist && props.match.url !== "/profile/new_album" ?
         <ProfileIndex
           currentUser={props.currentUser}
           artistAlbums={props.artistAlbums}
