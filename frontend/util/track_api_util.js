@@ -1,7 +1,7 @@
 export const createTrack = (track) => {
   return $.ajax({
     method: "POST",
-    url: "",
+    url: "/api/tracks",
     data: { track },
   });
 };
