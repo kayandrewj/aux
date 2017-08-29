@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class AlbumForm extends React.Component {
   constructor(props) {
@@ -20,19 +21,25 @@ class AlbumForm extends React.Component {
     let file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
-    fileReader.onloadend = function () {
+    fileReader.onloadend = () => {
       this.setState({ artwork: file, url: fileReader.result });
-    }.bind(this);
+    };
 
     if (file) {
-      fileReader.readAsDataUrl(file);
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ artwork: null, url: ""});
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const album = Object.assign({}, this.state);
-    this.props.createAlbum(album);
+    let formData = new FormData();
+    formData.append("album[title]", this.state.title);
+    formData.append("album[artwork]", this.state.artwork);
+    this.props.createAlbum(formData).then(
+      (album) => this.match.params.history.push(`album/newTracks`)
+    );
   }
 
   handleChange(field) {
