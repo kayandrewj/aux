@@ -14,7 +14,7 @@ class ProfileSidebar extends React.Component {
 
   targetProfileId() {
     if (this.props.targetProfilePath) {
-      return parseInt(this.props.targetProfilePath.match(/(\d+$)/)[0]);
+      return this.props.match.params.userId;
     }
   }
 
@@ -39,6 +39,7 @@ class ProfileSidebar extends React.Component {
   }
 
   targetProfileInfo() {
+    debugger
     if (this.props.targetArtistProfile) {
       return (
         <div className="profile-sidebar-info">
@@ -52,12 +53,12 @@ class ProfileSidebar extends React.Component {
             {this.props.targetArtistProfile.bio}
           </p>
 
-          {this.props.currentUser && (this.targetProfileId() === this.props.currentUser.id) ?
+          {this.props.currentUser && (this.targetProfileId() == this.props.currentUser.id) ?
             <div className="profile-vip-links">
               <Link to={`/profile/${this.targetProfileId()}`} className="profile-vip">
                 Edit Profile
               </Link>
-              <Link to={`/profile/new_album/${this.targetProfileId()}`} className="profile-vip">
+              <Link to={`/profile/${this.targetProfileId()}/newAlbum`} className="profile-vip">
                 Add Music
               </Link>
             </div>

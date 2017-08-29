@@ -5,8 +5,28 @@ class AlbumForm extends React.Component {
   constructor(props) {
     super(props);
 
-  this.handleSubmit = this.handleSubmit.bind(this);
-  this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      title: "",
+      artwork: null,
+      url: null,
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.updateFile = this.updateFile.bind(this);
+  }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = function () {
+      this.setState({ artwork: file, url: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataUrl(file);
+    }
   }
 
   handleSubmit(e) {
@@ -26,12 +46,11 @@ class AlbumForm extends React.Component {
           <label>Album Title
             <input onChange={this.handleChange('title')}/>
           </label>
-
           <label>Album Cover
-            <input onChange={this.handleChange('artwork')}/>
+            <input type="file" onChange={this.updateFile}/>
           </label>
-
           <button>Next</button>
+          <img src={this.state.artwork}/>
         </form>
 
       </div>
