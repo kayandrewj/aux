@@ -10,7 +10,6 @@ class AlbumForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const album = Object.assign({}, this.state);
     this.props.createAlbum(album);
@@ -21,7 +20,6 @@ class AlbumForm extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <div className="album-form-box">
         <form onSubmit={this.handleSubmit} className="album-form">
