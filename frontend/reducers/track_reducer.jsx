@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_TRACK, RECEIVE_ALBUM_TRACKS } from '../actions/track_actions';
+import { RECEIVE_TRACK, RECEIVE_ALBUM_TRACKS, CLEAR_TRACKS } from '../actions/track_actions';
 
 const TrackReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,6 +11,9 @@ const TrackReducer = (state = {}, action) => {
 
     case RECEIVE_TRACK:
       return merge({}, state, action.trackInfo);
+
+    case CLEAR_TRACKS:
+      return merge({}, { tracks: {} });
 
     default:
       return state;
