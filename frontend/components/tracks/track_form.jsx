@@ -9,6 +9,9 @@ class TrackForm extends React.Component {
       title: "",
       audio: "",
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   updateFile(e) {
@@ -30,11 +33,8 @@ class TrackForm extends React.Component {
     e.preventDefault();
     let formData = new FormData();
     formData.append("track[title]", this.state.title);
-    // fix this it's for album make it for track
-    formData.append("track[]", this.state.artwork);
-    this.props.createAlbum(formData).then(
-      (album) => this.match.params.history.push(`album/newTracks`)
-    );
+    formData.append("track[audio]", this.state.audio);
+    this.props.createTrack(formData);
   }
 
   handleChange(field) {
@@ -42,6 +42,21 @@ class TrackForm extends React.Component {
   }
 
   render() {
-
+    return(
+      <div className="track-form-box">
+        <form onSubmit={this.handleSubmit} className="track-form">
+          <label>Track Title
+            <input onChange={this.handleChange('title')}/>
+          </label>
+          <label>Audio
+            <input type="file" onChange={this.updateFile}/>
+          </label>
+          <button>Post</button>
+          <img src={this.state.url}/>
+        </form>
+      </div>
+    );
   }
 }
+
+export default withRouter(TrackForm);

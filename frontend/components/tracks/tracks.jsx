@@ -8,6 +8,7 @@ const Tracks = (props) => {
       <TrackIndex
         tracks={props.tracks}
         fetchAlbumTracks={props.fetchAlbumTracks}
+        clearTracks={props.clearTracks}
         />
     </div>
   );

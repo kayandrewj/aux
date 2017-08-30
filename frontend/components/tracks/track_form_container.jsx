@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import AlbumForm from './album_form';
+import TrackForm from './track_form';
 import { withRouter } from 'react-router-dom';
 import { createTrack } from '../../actions/track_actions';
 

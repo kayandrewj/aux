@@ -7,23 +7,27 @@ import ProfileContainer from './profile/profile_container';
 import AlbumContainer from './album/album_container';
 import AlbumFormContainer from './album/album_form_container';
 import TracksContainer from './tracks/tracks_container';
+import TrackFormContainer from './tracks/track_form_container';
 
 
 const App = () => {
   return (
     <div className='app'>
 
+      <Route path="/" component={NavContainer} />
 
-        <Route path="/album/:albumId" component={AlbumContainer} />
-        <Route path="/album/:albumId" component={TracksContainer} />
-        <Route path="/profile/:userId" component={ProfileContainer} />
-        <Route path="/profile/:userId/newAlbum" component={AlbumFormContainer} />
-        <Route path="/" component={NavContainer} />
+      <Route exact path="/album/:albumId" component={AlbumContainer} />
+      <Route path="/profile/:userId/newAlbum" component={AlbumFormContainer} />
 
-        <AuthRoute exact path="/signup" component={SessionFormContainer} />
-        <AuthRoute exact path="/login" component={SessionFormContainer} />
-        <AuthRoute exact path="/band" component={SessionFormContainer} />
-      </div>
+      <Route path="/album/:albumId" component={TracksContainer} />
+      <Route path="/album/:albumId/newTracks" component={TrackFormContainer} />
+
+      <Route path="/profile/:userId" component={ProfileContainer} />
+
+      <AuthRoute exact path="/signup" component={SessionFormContainer} />
+      <AuthRoute exact path="/login" component={SessionFormContainer} />
+      <AuthRoute exact path="/band" component={SessionFormContainer} />
+    </div>
 
   );
 };
