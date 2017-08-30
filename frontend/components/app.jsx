@@ -6,6 +6,7 @@ import NavContainer from './nav/nav_container';
 import ProfileContainer from './profile/profile_container';
 import AlbumContainer from './album/album_container';
 import AlbumFormContainer from './album/album_form_container';
+import TracksContainer from './tracks/tracks_container';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
 
 
         <Route path="/album/:albumId" component={AlbumContainer} />
+        <Route path="/album/:albumId" component={TracksContainer} />
         <Route path="/profile/:userId" component={ProfileContainer} />
         <Route path="/profile/:userId/newAlbum" component={AlbumFormContainer} />
         <Route path="/" component={NavContainer} />

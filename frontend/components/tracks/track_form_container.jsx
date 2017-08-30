@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import AlbumForm from './album_form';
 import { withRouter } from 'react-router-dom';
-import { createTrack } from '../../actions/album_actions';
+import { createTrack } from '../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createTrack: (track) => dispatch(createAlbum(track)),
+    createTrack: (track) => dispatch(createTrack(track)),
   };
 };
 
