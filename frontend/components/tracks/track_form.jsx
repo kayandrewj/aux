@@ -31,7 +31,6 @@ class TrackForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     let formData = new FormData();
     formData.append("track[title]", this.state.title);

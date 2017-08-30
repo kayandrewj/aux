@@ -39,7 +39,6 @@ class ProfileSidebar extends React.Component {
   }
 
   targetProfileInfo() {
-    debugger
     if (this.props.targetArtistProfile) {
       return (
         <div className="profile-sidebar-info">

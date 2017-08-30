@@ -6,7 +6,6 @@ class TrackIndexItem extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <li className="track">
         <p className="track-title">{this.props.track.title}</p>
