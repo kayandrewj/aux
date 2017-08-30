@@ -57,7 +57,7 @@ class ProfileSidebar extends React.Component {
             <div className="profile-vip-links">
               <Link to={`/profile/${this.targetProfileId()}`} className="profile-vip">
                 Edit Profile
-              </Link>
+              </Link><br/>
               <Link to={`/profile/${this.targetProfileId()}/newAlbum`} className="profile-vip">
                 Add Music
               </Link>

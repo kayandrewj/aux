@@ -26,24 +26,29 @@ class Nav extends React.Component {
   }
 
   authButtons() {
-    if (this.isAuthPage()) {
+     if (!this.isAuthPage() && !this.props.loggedIn) {
       return(
         <span className='nav-links'>
-          <Link to={'/no/help/for/you'}>Help</Link>
-        </span>
-      );
-    } else if (!this.isAuthPage() && !this.props.loggedIn) {
-      return(
-        <span className='nav-links'>
-          <Link to={'/login'}>Login</Link>
-          <Link to={'/signup'}>Sign Up</Link>
+          <div className='nav-link-box'>
+            <Link to={'/login'}>Login</Link>
+          </div>
+
+          <div className='nav-link-box'>
+            <Link to={'/signup'}>Sign Up</Link>
+          </div>
         </span>
       );
     } else {
       return(
         <span className='nav-links'>
+        <div className='nav-link-box'>
           <Link to={`/profile/${this.usersId()}`} className="nav-greeting">{this.usersName()}</Link>
+        </div>
+        <div className='nav-link-box'>
           <button className="log-out" onClick={this.props.logout}>Log out</button>
+        </div>
+
+
         </span>
       );
     }

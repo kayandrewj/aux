@@ -50,11 +50,11 @@ class AlbumForm extends React.Component {
     return(
       <div className="album-form-box">
         <form onSubmit={this.handleSubmit} className="album-form">
-          <label>Album Title
-            <input onChange={this.handleChange('title')}/>
+          <label className="album-form-art">Album Cover
+            <input className="album-input-art" type="file" onChange={this.updateFile}/>
           </label>
-          <label>Album Cover
-            <input type="file" onChange={this.updateFile}/>
+          <label className="album-form-title">Album Title
+            <input className="album-input-title" onChange={this.handleChange('title')}/>
           </label>
           <button>Next</button>
           <img src={this.state.url}/>

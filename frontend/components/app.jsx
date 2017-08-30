@@ -15,6 +15,7 @@ const App = () => {
     <div className='app'>
 
       <Route path="/" component={NavContainer} />
+      <Route path="/profile/:userId" component={ProfileContainer} />
 
       <Route exact path="/album/:albumId" component={AlbumContainer} />
       <Route path="/profile/:userId/newAlbum" component={AlbumFormContainer} />
@@ -22,7 +23,6 @@ const App = () => {
       <Route path="/album/:albumId" component={TracksContainer} />
       <Route path="/album/:albumId/newTracks" component={TrackFormContainer} />
 
-      <Route path="/profile/:userId" component={ProfileContainer} />
 
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       <AuthRoute exact path="/login" component={SessionFormContainer} />
