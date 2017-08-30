@@ -1,9 +1,11 @@
 .profile-sidebar {
   font-family: 'Roboto', sans-serif;
   color: #82838C;
-  width: 123px;
+  width: 120px;
   float: right;
-  margin-top: 45px;
+  margin-top: 35px;
+  padding-right: 30px;
+  margin-left: -15px;
 }
 
 .avatar-img {
@@ -25,6 +27,7 @@
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 3px;
+  color: #363636;
 }
 
 .profile-sidebar-location {

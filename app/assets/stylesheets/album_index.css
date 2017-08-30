@@ -1,5 +1,5 @@
 .album-index {
-  margin-top: 120px;
+  margin-top: 118px;
 }
 
 .artist-album-index-header {
@@ -22,33 +22,44 @@
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  height: 100%
+  height: 100%;
+  color: rgb(0,161,198);
+  border: 1px solid rgba(0,0,0,.1);
+  background-color: #ffffff;
 }
 
 .profile-index {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 33px;
+  padding: 35px 30px 45px;
+
 
 }
 
 .profile-album-box {
   list-style: none;
-  padding: 18px;
+  padding-right: 35px;
+  padding-bottom: 35px;
 }
 
 .profile-album-img {
-  width: auto;
-  height: auto;
-  max-width: 234px;
-  max-height: 234px;
+  width: 232px;
+  height: 232px;
 }
 
 .profile-album-text {
   margin: 0.7em 0 0.3em 0;
+  text-decoration: none;
+  color: #0687F5;
+  font-weight: 500;
 }
 
-.profile-edit {
+.profile-album-text:hover {
+  text-decoration: underline;
+}
+
+.profile-vip {
   height: 18px;
+
 }
