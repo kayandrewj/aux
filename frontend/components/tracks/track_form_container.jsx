@@ -11,7 +11,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createTrack: (track) => dispatch(createTrack(track)),
+    createTrack: (track, album_id) => {
+      debugger
+      return dispatch(createTrack(track, album_id));
+    }
   };
 };
 

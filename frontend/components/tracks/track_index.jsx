@@ -22,7 +22,6 @@ class TrackIndex extends React.Component {
   }
 
   clearTracks() {
-    debugger
     this.props.clearTracks();
   }
 

@@ -7,7 +7,8 @@ class TrackForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      audio: "",
+      audio_file: "",
+      album_id: this.props.match.params.albumId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -19,7 +20,7 @@ class TrackForm extends React.Component {
     const fileReader = new FileReader();
 
     fileReader.onloadend = () => {
-      this.setState({ audio: file });
+      this.setState({ audio_file: file });
     };
 
     if (file) {
@@ -30,11 +31,12 @@ class TrackForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     let formData = new FormData();
     formData.append("track[title]", this.state.title);
-    formData.append("track[audio]", this.state.audio);
-    this.props.createTrack(formData);
+    formData.append("track[audio_file]", this.state.audio_file);
+    this.props.createTrack(formData, this.props.match.params.albumId);
   }
 
   handleChange(field) {

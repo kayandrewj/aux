@@ -24,8 +24,8 @@ export const receiveTrack = (track) => {
   };
 };
 
-export const createTrack = track => dispatch => {
-  TrackApiUtil.createTrack(track).then(
+export const createTrack = (track, album_id) => dispatch => {
+  TrackApiUtil.createTrack(track, album_id).then(
     track => dispatch(receiveTrack(track))
   );
 };
