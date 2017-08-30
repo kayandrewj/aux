@@ -6,8 +6,8 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(track_params)
-    if @track.album_id && @track.save!
+    @track = Album.find(params[:album_id]).tracks.new(track_params)
+    if @track.save
       render json: @track
     else
       render json: @track.errors.full_messages, status: 422
