@@ -62,6 +62,9 @@ class Nav extends React.Component {
         <h1>
           <Link to={'/'} className="logo">AUX</Link>
         </h1>
+        <form className="nav-search">
+          <input className="search-input" placeholder="search AUX"/>
+        </form>
         <div className="nav-button">
           {this.authButtons()}
         </div>

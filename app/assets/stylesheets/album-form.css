@@ -57,3 +57,22 @@
   margin-top: 31px;
   position: absolute;
 }
+
+.search-input {
+  width: 222px;
+  height: 21px;
+  font-size: 13px;
+  padding: 0 21px 0 3px;
+  text-align: center;
+  background-color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  outline: none;
+}
+
+.search-input:focus {
+  background-color: #eef2f3;
+  border: 1px solid #bebebe;
+  text-align: left;
+  left: -100px;
+}
