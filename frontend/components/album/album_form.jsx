@@ -59,7 +59,7 @@ class AlbumForm extends React.Component {
             <input className="album-input-title" onChange={this.handleChange('title')}/>
           </label>
           <button>Next</button>
-          <img className="album-art-preview" src={this.state.url}/>
+          {this.state.url ? <img className="album-art-preview" src={this.state.url}/> : undefined}
         </form>
 
       </div>
