@@ -11,7 +11,7 @@ export const receiveArtistAlbums = (artistAlbums) => {
 };
 
 export const fetchArtistAlbums = artistId => dispatch => {
-  AlbumApiUtil.fetchArtistAlbums(artistId).then(
+  return AlbumApiUtil.fetchArtistAlbums(artistId).then(
     artistAlbums => dispatch(receiveArtistAlbums(artistAlbums))
   );
 };
@@ -24,13 +24,12 @@ export const receiveAlbum = (album) => {
 };
 
 export const fetchAlbum = albumId => dispatch => {
-  AlbumApiUtil.fetchAlbum(albumId).then(
+  return AlbumApiUtil.fetchAlbum(albumId).then(
     album => dispatch(receiveAlbum(album))
   );
 };
 
 export const createAlbum = album => dispatch => {
-  AlbumApiUtil.createAlbum(album).then(
-    album => dispatch(receiveAlbum(album))
-  );
+  return AlbumApiUtil.createAlbum(album)
+  .then(album => dispatch(receiveAlbum(album)));
 };

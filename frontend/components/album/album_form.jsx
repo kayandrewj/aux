@@ -38,7 +38,9 @@ class AlbumForm extends React.Component {
     formData.append("album[title]", this.state.title);
     formData.append("album[artwork]", this.state.artwork);
     this.props.createAlbum(formData).then(
-      (album) => this.match.params.history.push(`album/newTracks`)
+      (action) => {
+        return this.props.history.push(`/album/${action.album.displayAlbum.id}/newTracks`);
+      }
     );
   }
 
