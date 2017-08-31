@@ -7,7 +7,7 @@ end
 
 gem "figaro"
 gem "aws-sdk"
-
+gem 'pg_search'
 gem "paperclip", "~> 5.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
