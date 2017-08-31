@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     resources :albums, only: [:show] do
       resources :tracks, only: [:index, :create, :destroy]
     end
+
+  end
+  
+  namespace :api do
+    get 'search/:query', to: 'search#index'
   end
 
 
