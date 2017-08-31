@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import AlbumSidebar from './album_sidebar';
+import TracksContainer from '../tracks/tracks_container';
 
 class AlbumBooklet extends React.Component {
   constructor(props) {
@@ -34,12 +36,12 @@ class AlbumBooklet extends React.Component {
     if (this.props.album) {
       return (
         <ul className="album-info">
-          <li>
+          <li className="album-info-header">
             {this.props.album.title}
           </li>
-          <li>
+          <li className="byline">by
             <Link to={`/profile/${this.props.album.user_id}`}>
-              by {this.props.album.band}
+              {this.props.album.band}
             </Link>
           </li>
         </ul>
@@ -61,13 +63,20 @@ class AlbumBooklet extends React.Component {
     return(
     <div className ="artist-profile">
       {this.targetProfileHeader()}
-    <div className="album-booklet">
-      {this.albumArt()}
+      <div className="album-booklet">
+        {this.albumArt()}
+      </div>
+      <AlbumSidebar
+        album={this.props.album}
+        targetArtistProfile={this.props.targetArtistProfile}
+        fetchArtistAlbums={this.props.fetchArtistAlbums}
+        artistAlbums={this.props.artistAlbums}
+        />
       <div className="album-info-box">
         {this.albumInfo()}
       </div>
+      <TracksContainer />
     </div>
-  </div>
     );
   }
 }

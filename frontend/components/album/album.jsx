@@ -10,15 +10,10 @@ const Album = (props) => {
         album={props.album}
         targetArtistProfile={props.targetArtistProfile}
         fetchAlbum={props.fetchAlbum}
-
-        />
-      <AlbumSidebar
-        album={props.album}
-        targetArtistProfile={props.targetArtistProfile}
-        fetchArtistAlbums={props.fetchArtistAlbums}
         artistAlbums={props.artistAlbums}
-        />
+        fetchArtistAlbums={props.fetchArtistAlbums}
 
+        />
     </div>
   );
 };

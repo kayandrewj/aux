@@ -17,7 +17,7 @@
   width: 120px;
   font-size: 12px;
   float: right;
-  margin-top: 248px;
+  margin-top: -350px;
 }
 
 .album-sidebar a {
@@ -33,4 +33,44 @@
 
 li {
   list-style: none;
+}
+
+.album-booklet {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 376px;
+  padding-right: 30px;
+}
+
+.album-info {
+  font-family: "Roboto", sans-serif;
+  padding-left: 30px;
+  width: 376px;
+}
+
+.album-info-header {
+  color: black;
+  font-size: 28px;
+}
+
+.byline {
+  font-size: 14px;
+  color: black;
+  width: auto;
+}
+
+.byline a:hover {
+  color: #0687F5;
+  text-decoration: underline;
+  text-decoration-color: #0687F5;
+}
+
+.track-title {
+  width: 376px;
+  margin: 0px;
+}
+
+.track-index li {
+  display: flex;
+  flex-direction: column;
 }

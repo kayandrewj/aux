@@ -20,7 +20,6 @@ const App = () => {
       <Route exact path="/album/:albumId" component={AlbumContainer} />
       <Route path="/profile/:userId/newAlbum" component={AlbumFormContainer} />
 
-      <Route path="/album/:albumId" component={TracksContainer} />
       <Route path="/album/:albumId/newTracks" component={TrackFormContainer} />
 
 

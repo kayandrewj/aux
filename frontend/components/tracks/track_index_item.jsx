@@ -8,7 +8,7 @@ class TrackIndexItem extends React.Component {
   render() {
     return(
       <li className="track">
-        <p className="track-title">{this.props.track.title}</p>
+        <span className="track-title">{this.props.track.title}</span>
         <audio controls>
           <source src={this.props.track.audio_file} type="audio/mp3" />
         </audio>
