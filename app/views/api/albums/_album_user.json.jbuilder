@@ -1,1 +1,1 @@
-json.extract!(albumInfo, :band, :profile_color)
+json.extract!(albumInfo, :id, :band, :profile_color)
