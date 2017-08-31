@@ -15,13 +15,7 @@
 
 class Album < ApplicationRecord
   include PgSearch
-
   multisearchable against: %i(title user)
-
-  pg_search_scope :dj_search, :associated_against => {
-    :artist_profiles => [:band],
-    :album => :title
-  }
 
   validates :user_id, :title, presence: true
   has_attached_file :artwork, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "https://s.discogs.com/images/default-label.png"
