@@ -34,8 +34,8 @@ class User < ApplicationRecord
   validates_attachment_content_type :header, content_type: /\Aimage\/.*\Z/
 
 
-  has_one :artist_profile, inverse_of: :user
-  has_many :albums
+  has_one :artist_profile, inverse_of: :user, dependent: :destroy
+  has_many :albums, dependent: :destroy
   accepts_nested_attributes_for :artist_profile
 
   after_initialize :ensure_session_token
