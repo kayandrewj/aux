@@ -41,10 +41,19 @@
 
 .album-input-title {
   width: 232px;
+  font-weight: 500;
 }
 
 .album-form button {
   width: 232px;
   color: white;
   margin-left: 30px;
+}
+
+.album-art-preview {
+  width: 232px;
+  height: 232px;
+  margin-left: 30px;
+  margin-top: 31px;
+  position: absolute;
 }
