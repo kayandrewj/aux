@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
 
   def create
-
     if !user_params[:is_artist]
       @user = User.new(user_params)
       if @user.save
