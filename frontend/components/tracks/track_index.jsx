@@ -27,9 +27,8 @@ class TrackIndex extends React.Component {
   }
 
   addTrackButton() {
-    debugger
-  if (this.props.displayAlbum && this.props.currentUserId === this.props.displayAlbum.userId) {
-    return <Link to={`/album/${displayAlbum.id}/newTracks`}>Add Track</Link>;
+    if (this.props.displayAlbum && this.props.currentUserId === this.props.displayAlbum.userId) {
+      return <Link to={`/album/${displayAlbum.id}/newTracks`}>Add Track</Link>;
   }
 }
 

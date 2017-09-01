@@ -96,18 +96,18 @@ class SessionForm extends React.Component {
   render() {
 
     const bandForm =
-      (<label>
-        <input placeholder="Band name" onChange={this.handleChange('band')}/>
+      (<label className="band-input">Band
+        <input onChange={this.handleChange('band')}/>
       </label>);
 
     const bioForm =
-      (<label>
-        <input type="text" placeholder="Tell us about your music" onChange={this.handleChange('bio')}/>
+      (<label className="bio-input">Bio
+        <input type="text" onChange={this.handleChange('bio')}/>
       </label>);
 
     const emailForm =
-      (<label>
-        <input placeholder="Email" onChange={this.handleChange('email')}/>
+      (<label className="email-input">Email
+        <input onChange={this.handleChange('email')}/>
       </label>);
 
     return(
@@ -120,14 +120,14 @@ class SessionForm extends React.Component {
           <div className="formdemobutton">
 
           <form onSubmit={ this.handleSubmit }>
-            <label>
-              <input placeholder="Username" onChange={this.handleChange('username')}/>
+            <label className="username-input">Username
+              <input onChange={this.handleChange('username')}/>
             </label>
 
             {this.props.formType === '/login' ? null : emailForm}
 
-            <label>
-              <input type="password" placeholder="Password" onChange={this.handleChange('password')}/>
+            <label className="password-input">Password
+              <input type="password" onChange={this.handleChange('password')}/>
             </label>
 
             {this.props.formType === '/band' ? bandForm : null}
