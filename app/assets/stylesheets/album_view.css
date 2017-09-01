@@ -7,10 +7,8 @@
 }
 
 .album-art-img {
-  width: auto;
-  height: auto;
-  max-width: 352px;
-  max-height: 352px;
+  width: 352px;
+  height: 352px;
 }
 
 .album-sidebar {
@@ -18,6 +16,7 @@
   font-size: 12px;
   float: right;
   margin-top: -350px;
+  margin-right: 32px;
 }
 
 .album-sidebar a {
@@ -40,6 +39,13 @@ li {
   flex-direction: column-reverse;
   width: 376px;
   padding-right: 30px;
+  margin-left: 455px;
+  margin-top: 45px;
+}
+
+.album-info-box {
+  margin-top: -350px;
+  margin-right: 33px;
 }
 
 .album-info {
@@ -55,8 +61,14 @@ li {
 
 .byline {
   font-size: 14px;
-  color: black;
+  color: #363636;
   width: auto;
+  padding-top: 9px;
+  padding-bottom: 38px;
+}
+
+.byline a {
+  padding-left: 3px;
 }
 
 .byline a:hover {
@@ -73,4 +85,64 @@ li {
 .track-index li {
   display: flex;
   flex-direction: column;
+}
+
+.sidebar-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-top: 0;
+  margin: 0 0 3px;
+  color: #363636;
+
+}
+
+.sidebar-disco {
+  font-family: "Roboto", sans-serif;
+  color: #363636;
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
+.track-index {
+  margin-left: 16px;
+}
+
+.track-title {
+  font-family: "Roboto", sans-serif;
+  color: #363636;
+  background-color: #FAFAFA;
+  width: 100px;
+  position: absolute;
+  z-index: 3;
+  margin-top: 28px;
+  margin-left: 32px;
+  width: 312px;
+  height: 22px;
+  border-top: 2px solid #FAFAFA;
+  border-left: 1px solid #363636;
+  padding-left: 7px;
+  height: 22px;
+  margin-top: 22px;
+  padding-top: 6px;
+}
+
+audio {
+  width: 380px;
+  height: 53px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400px;
+  margin-top: -3px;
+}
+
+.first-list-item {
+  margin-top: 2px;
+  margin-left: 0px;
+  padding-left: 32px;
+  padding-right: 36px;
+  border: none;
+  padding-top: 7px;
+  height: 13px;
+  border-radius: 10px;
 }
