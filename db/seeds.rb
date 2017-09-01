@@ -15,47 +15,19 @@ Album.destroy_all
 p "destroying all tracks..."
 Track.destroy_all
 
-
-ARTISTS = [
-  "Arkivet",
-  "Azymandias",
-  "Bulldozer Preachers",
-  "Deafheaven",
-  "Fracture",
-  "Fried Egg",
-  "Hands Up",
-  "Infinity Mirror",
-  "Kodachrome",
-  "LIFE ARCTIC",
-  "LORDE",
-  "Night Rider",
-  "The Trotskys",
-  "psuedocereal",
-  "seiko",
-  "Ship of Theseus",
-  "The Belles of Sausalito",
-  "The G-Men",
-  "The Moneychangers",
-  "The Once Prouds",
-  "The War on Drugs",
-  "TOWER",
-  "Unacceptable Use",
-  "Vincent Vinyl",
-  "vladimir",
-  "Waffle House",
-  "Warp Drive"
-]
+headers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
 p "creating new artists..."
 ARTISTS.each do |artist|
   handle = artist.gsub(/\s+/, '').downcase
   User.create!(
+    location: "#{Faker::Address.city}, #{Faker::Address.country}
     username: handle,
     email: "#{handle}@demo.com",
     password: "password",
     is_artist: true,
     bio: "#{artist} is an art form and cultural activity whose medium is sound organized in time. Different styles of #{artist} omit some of these elements. The name derives from Greek.",
-    artist_profile_attributes: {band: artist}
+    artist_profile_attributes: {band: artist, header: "https://s3.us-east-2.amazonaws.com/aux-io-dev/headers/#{headers.sample}"}
   )
 end
 
