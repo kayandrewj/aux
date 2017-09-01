@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import ProfileIndex from './profile_index';
 import ProfileHeader from './profile_header';
 import ProfileSidebar from './profile_sidebar';
+import AlbumFormContainer from '../album/album_form_container';
 
 const Profile = (props) => {
     return(
@@ -35,6 +36,9 @@ const Profile = (props) => {
       :
         undefined
       }
+
+      <Route path="/profile/:userId/newAlbum" component={AlbumFormContainer} />
+
       </div>
     );
   };

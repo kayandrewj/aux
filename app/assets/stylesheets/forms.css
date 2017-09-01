@@ -2,39 +2,24 @@
   font-family: "Roboto", sans-serif;
   color: #363636;
   padding-top: 48px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .file-upload-input {
   background-color: transparent;
   border: none;
-  margin-right: 49px;
-  margin-bottom: -36px;
+  margin-right: 71px;
+  margin-bottom: 0px;
 }
 
 .track-title-input {
-  margin-right: 84px;
+  margin-right: 87px;
 }
 
 .session-form {
   font-family: "Roboto", sans-serif;
-}
-
-.username-input {
-  margin-left: -71px;
-}
-
-.password-input {
-  margin-left: -69px;
-}
-
-.email-input {
-  margin-left: -59px;
-}
-
-.band-input {
-  margin-left: -35px;
-}
-
-.bio-input {
-  
 }
