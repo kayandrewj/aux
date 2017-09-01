@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 p "destroying all users..."
 User.destroy_all
 p "destroying all artist profiles..."
@@ -17,11 +9,42 @@ Track.destroy_all
 
 headers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
+ARTISTS = [
+   "Arkivet",
+   "Azymandias",
+   "Bulldozer Preachers",
+   "Deafheaven",
+   "Fracture",
+   "Fried Egg",
+   "Hands Up",
+   "Infinity Mirror",
+   "Kodachrome",
+   "LIFE ARCTIC",
+   "LORDE",
+   "Night Rider",
+   "The Trotskys",
+   "psuedocereal",
+   "seiko",
+   "Ship of Theseus",
+   "The Belles of Sausalito",
+   "The G-Men",
+   "The Moneychangers",
+   "The Once Prouds",
+   "The War on Drugs",
+   "TOWER",
+   "Unacceptable Use",
+   "Vincent Vinyl",
+   "vladimir",
+   "Waffle House",
+   "Warp Drive"
+ ]
+
+
 p "creating new artists..."
 ARTISTS.each do |artist|
   handle = artist.gsub(/\s+/, '').downcase
   User.create!(
-    location: "#{Faker::Address.city}, #{Faker::Address.country}
+    location: "#{Faker::Address.city}, #{Faker::Address.country}",
     username: handle,
     email: "#{handle}@demo.com",
     password: "password",
@@ -204,19 +227,29 @@ all_albums << Album.create!(
 
 
 TRACKS = [
-  {title: "Cake", audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/cake.mp3"},
-  {title: "Flame", audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/flame.mp3"},
-  {title: "Cake", audio_file:   "https://s3.us-east-2.amazonaws.com/aux-io-dev/glasslantern.mp3"},
-  {title: "Pines", audio_file:   "https://s3.us-east-2.amazonaws.com/aux-io-dev/pines.mp3"},
-  {title: "Plastic", audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/plastic.mp3"},
-  {title: "Rhapsody", audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/rhapsody.mp3"},
-  {title: "Silence", audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/silence.mp3"}
+  {audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/cake.mp3"},
+  {audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/flame.mp3"},
+  {audio_file:   "https://s3.us-east-2.amazonaws.com/aux-io-dev/glasslantern.mp3"},
+  {audio_file:   "https://s3.us-east-2.amazonaws.com/aux-io-dev/pines.mp3"},
+  {audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/plastic.mp3"},
+  {audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/rhapsody.mp3"},
+  {audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/silence.mp3"}
+]
+
+faker_names = [
+  Faker::Ancient.primordial,
+  Faker::Beer.hop,
+  Faker::Color.color_name,
+  Faker::HitchhikersGuideToTheGalaxy.planet,
+  Faker::Lovecraft.word,
+  Faker::Space.meteorite,
 ]
 
 p "creating new tracks..."
 all_albums.each do |album|
   5.times do
     track = Track.new(TRACKS.sample)
+    track.title = faker_names.sample.capitalize
     track.album = album
     track.save!
   end
