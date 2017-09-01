@@ -25,3 +25,10 @@ https://aux-io.herokuapp.com/#/
  
   Efficient interaction with the database is essential to growing AUX into a richer web app. Information rendered by AUX components is rarely pulled from a single table. To fetch just the data I needed from all the tables I had using one ajax query, I implemented succinct jbuildersMuch of that work fell on jbuilder, but I discovered I could lighten the load by re-using data I had already rendered. Modularizing React components to use this style of database queries led to functional development styles within React components. 
   
+### Interface
+
+  AUX is designed closely after bandcamp, focused on intuitive and visually pleasing placement of components. Some components were left out; the alternative sign-in modal and the altered color scheme on some of the nav bars.
+  
+ ### Expansion
+ 
+  Current priorities for AUX are database migration, genre implementation, and better search. Back burner plans include social integration and algorithmic listening suggestions.
