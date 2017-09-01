@@ -7,7 +7,6 @@ class AlbumIndexItem extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <li className="main-album-box">
         <Link to={`/album/${this.props.album.id}`} className={this.props.number}>
