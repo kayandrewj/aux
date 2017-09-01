@@ -8,6 +8,7 @@ class TrackIndex extends React.Component {
     super(props);
 
     this.clearTracks = this.clearTracks.bind(this);
+    this.addTrackButton = this.addTrackButton.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,13 @@ class TrackIndex extends React.Component {
     this.props.clearTracks();
   }
 
+  addTrackButton() {
+    debugger
+  if (this.props.displayAlbum && this.props.currentUserId === this.props.displayAlbum.userId) {
+    return <Link to={`/album/${displayAlbum.id}/newTracks`}>Add Track</Link>;
+  }
+}
+
   render() {
     let tracks;
     if (this.props.tracks) {
@@ -39,6 +47,7 @@ class TrackIndex extends React.Component {
     return (
       <div className="track-index">
         { tracks }
+        {this.addTrackButton()}
       </div>
     );
   }

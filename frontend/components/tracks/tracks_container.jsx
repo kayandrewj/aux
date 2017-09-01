@@ -4,8 +4,11 @@ import Tracks from './tracks';
 import { fetchAlbumTracks, clearTracks } from '../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     tracks: state.tracks,
+    currentUserId: state.session.currentUser,
+    displayAlbum: state.albums.displayAlbum,
   };
 };
 

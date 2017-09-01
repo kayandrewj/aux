@@ -47,10 +47,10 @@ class TrackForm extends React.Component {
       <div className="track-form-box">
         <form onSubmit={this.handleSubmit} className="track-form">
           <label>Track Title
-            <input onChange={this.handleChange('title')}/>
+            <input onChange={this.handleChange('title')} className="track-title-input"/>
           </label>
           <label>Audio
-            <input type="file" onChange={this.updateFile}/>
+            <input type="file" onChange={this.updateFile} className="file-upload-input"/>
           </label>
           <button>Post</button>
           <img src={this.state.url}/>

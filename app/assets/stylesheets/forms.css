@@ -1,0 +1,16 @@
+.track-form {
+  font-family: "Roboto", sans-serif;
+  color: #363636;
+  padding-top: 48px;
+}
+
+.file-upload-input {
+  background-color: transparent;
+  border: none;
+  margin-right: 49px;
+  margin-bottom: -36px;
+}
+
+.track-title-input {
+  margin-right: 84px;
+}
