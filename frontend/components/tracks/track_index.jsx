@@ -28,12 +28,13 @@ class TrackIndex extends React.Component {
   render() {
     let tracks;
     if (this.props.tracks) {
-      tracks = Object.keys(this.props.tracks).map(id => (
-        <TrackIndexItem
+      tracks = Object.keys(this.props.tracks).map((id, idx) => {
+        return <TrackIndexItem
           track={this.props.tracks[id]}
           key={id}
-        />
-    ));
+          idx={idx}
+        />;
+    });
     }
     return (
       <div className="track-index">
