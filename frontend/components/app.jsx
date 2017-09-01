@@ -9,6 +9,7 @@ import AlbumFormContainer from './album/album_form_container';
 import TracksContainer from './tracks/tracks_container';
 import TrackFormContainer from './tracks/track_form_container';
 import SearchContainer from './search/search_container';
+import MainContainer from './main/main_container';
 
 
 const App = () => {
@@ -35,3 +36,10 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+// <Route exact path="/" component={MainContainer} />
