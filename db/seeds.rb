@@ -38,7 +38,6 @@ ARTISTS = [
    "vladimir",
    "Waffle House",
    "Warp Drive",
-   "Halifax",
    "Hudson",
    "Lamar",
    "Lost Boy",
@@ -89,11 +88,6 @@ artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+see
 )
 
 all_albums << Album.create!(
-title: "Armada",
-user_id: User.find_by(username: "halifax").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/halifax-armada.png")
-
-all_albums << Album.create!(
 title: "Manhattan Sunset",
 user_id: User.find_by(username: "infinitymirror").id,
 artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/infinitymirror-manhattansunset.jpg"
@@ -103,6 +97,12 @@ all_albums << Album.create!(
 title: "How do I delete this",
 user_id: User.find_by(username: "handsup").id,
 artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/handsup-howdoideletethis.jpg"
+)
+
+all_albums << Album.create!(
+title: "STONE",
+user_id: User.find_by(username: "tower").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/tower-stone.jpg"
 )
 
 all_albums << Album.create!(
@@ -122,7 +122,7 @@ artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/
 all_albums << Album.create!(
 title: "Crossed Paths",
 user_id: User.find_by(username: "hudson").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/hudson-crossedpaths.png")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/hudson-crossedpaths.png")
 
 all_albums << Album.create!(
 title: "A Comfortable State of Being",
@@ -132,34 +132,34 @@ artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/arkivet-acomf
 all_albums << Album.create!(
 title: "flora",
 user_id: User.find_by(username: "flora").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/flora-flora.jpg")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/flora-flora.jpg")
 
 
 all_albums << Album.create!(
 title: "Like You Very Much",
 user_id: User.find_by(username: "lamar").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/lamar-likeyouverymuch.png")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/lamar-likeyouverymuch.png")
 
 
 all_albums << Album.create!(
 title: "Roads Less Traveled",
 user_id: User.find_by(username: "lostboy").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/lostboy-roadlesstravelled.jpg")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/lostboy-roadslesstravelled.jpg")
 
 all_albums << Album.create!(
 title: "Is It?",
 user_id: User.find_by(username: "paranoia").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/paranoia-isit.jpg")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/paranoia-isit.jpg")
 
 all_albums << Album.create!(
 title: "If You Know All This",
 user_id: User.find_by(username: "somesunday").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/somesunday-ifyouknowallthis.jpg")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/somesunday-ifyouknowallthis.jpg")
 
 all_albums << Album.create!(
 title: "Collision",
 user_id: User.find_by(username: "system").id,
-artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/system-collision.jpg")
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/system-collision.jpg")
 
 
 all_albums << Album.create!(
@@ -271,11 +271,6 @@ all_albums << Album.create!(
 )
 
 
-all_albums << Album.create!(
-  title: "STONE",
-  user_id: User.find_by(username: "tower").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/tower-stone.jpg"
-)
 
 all_albums << Album.create!(
   title: "TOWER",
