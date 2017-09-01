@@ -314,14 +314,17 @@ TRACKS = [
   {audio_file: "https://s3.us-east-2.amazonaws.com/aux-io-dev/silence.mp3"}
 ]
 
-faker_names = [
-  Faker::Ancient.primordial,
-  Faker::Beer.hop,
-  Faker::Color.color_name,
-  Faker::HitchhikersGuideToTheGalaxy.planet,
-  Faker::Lovecraft.word,
-  Faker::Space.meteorite,
-]
+faker_names = []
+
+20.times do
+  faker_names << Faker::Ancient.primordial
+  faker_names << Faker::Beer.hop
+  faker_names << Faker::Color.color_name
+  faker_names << Faker::HitchhikersGuideToTheGalaxy.planet
+  faker_names << Faker::Lovecraft.word
+  faker_names << Faker::Space.meteorite
+end
+
 
 p "creating new tracks..."
 all_albums.each do |album|
