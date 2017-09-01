@@ -9,12 +9,19 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
+  overflow: hidden;
+}
+
+.profile-header {
+  max-width: 1000px;
+  height: 180px;
+  overflow: hidden;
 }
 
 .header-img {
-  height: auto;
   width: 100%;
   max-width: 1000px;
+  overflow: hidden;
 }
 
 .artist-profile {
