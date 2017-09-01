@@ -1,7 +1,12 @@
 class Api::AlbumsController < ApplicationController
 
   def index
-    @albums = Album.where(user_id: params[:user_id])
+    if(params[:user_id])
+      @albums = Album.where(user_id: params[:user_id])
+      render 'api/albums/index'
+    end
+
+    @albums = Album.take(8)
     render 'api/albums/index'
   end
 
