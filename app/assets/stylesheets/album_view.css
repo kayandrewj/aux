@@ -92,7 +92,7 @@ li {
   font-size: 14px;
   font-weight: 500;
   border-top: 0;
-  margin: 0 0 3px;
+  margin: 0 0 24px;
   color: #363636;
 
 }
@@ -102,6 +102,7 @@ li {
   color: #363636;
   font-size: 14px;
   font-weight: 400;
+  margin: 0 0 18px;
 
 }
 

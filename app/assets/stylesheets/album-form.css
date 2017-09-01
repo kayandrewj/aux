@@ -68,6 +68,8 @@
   border: 1px solid #e0e0e0;
   border-radius: 3px;
   outline: none;
+  margin: 11px;
+  margin-left: 67px;
 }
 
 .search-input:focus {

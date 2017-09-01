@@ -14,3 +14,27 @@
 .track-title-input {
   margin-right: 84px;
 }
+
+.session-form {
+  font-family: "Roboto", sans-serif;
+}
+
+.username-input {
+  margin-left: -71px;
+}
+
+.password-input {
+  margin-left: -69px;
+}
+
+.email-input {
+  margin-left: -59px;
+}
+
+.band-input {
+  margin-left: -35px;
+}
+
+.bio-input {
+  
+}
