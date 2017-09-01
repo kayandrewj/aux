@@ -18,6 +18,7 @@ const App = () => {
 
       <Route path="/" component={NavContainer} />
       <Route path="/profile/:userId" component={ProfileContainer} />
+      <Route exact path="/" component={MainContainer} />
 
       <Route path="/results" component={SearchContainer} />
 
@@ -36,10 +37,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-// <Route exact path="/" component={MainContainer} />
