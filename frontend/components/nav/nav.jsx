@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+
 
 class Nav extends React.Component {
   constructor(props) {
@@ -8,6 +9,10 @@ class Nav extends React.Component {
     this.authButtons = this.authButtons.bind(this);
     this.usersName = this.usersName.bind(this);
     this.usersId = this.usersId.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.state = {
+      query: '',
+    };
   }
 
   isAuthPage() {
@@ -54,23 +59,45 @@ class Nav extends React.Component {
     }
   }
 
-  render() {
-  return(
+  handleSearch(e) {
+    e.preventDefault();
+    this.props.sendSearch(this.state.query).then(
+      (action) => {
+        return this.props.history.push(`/results`);
+      }
+    );
+  }
 
-    <div className="nav-god">
-      <div className="menu-bar">
-        <h1>
-          <Link to={'/'} className="logo">AUX</Link>
-        </h1>
-        <form className="nav-search">
-          <input className="search-input" placeholder="search AUX"/>
-        </form>
-        <div className="nav-button">
-          {this.authButtons()}
+  handleChange(field) {
+    return (e) => this.setState({ [field]: e.target.value });
+  }
+
+  render() {
+    return(
+      <div className="nav-god">
+        <div className="menu-bar">
+          <h1>
+            <Link to={'/'} className="logo">AUX</Link>
+          </h1>
+
+          {this.isAuthPage() ? undefined :
+            <form
+              className="nav-search"
+              onChange={this.handleChange('query')}
+              onSubmit={this.handleSearch}>
+
+              <input
+                className="search-input"
+                placeholder="search AUX"/>
+
+            </form>
+          }
+
+          <div className="nav-button">
+            {this.authButtons()}
+          </div>
         </div>
       </div>
-    </div>
-
     );
   }
 }

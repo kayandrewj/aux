@@ -54,7 +54,6 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // for conditionally dictating UX
   greeting() {
     return this.props.formType !== '/login' ? 'Sign up' : 'Login';
   }
