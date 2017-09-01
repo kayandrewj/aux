@@ -22,6 +22,7 @@ ARTISTS = [
    "LIFE ARCTIC",
    "LORDE",
    "Night Rider",
+   "flora",
    "The Trotskys",
    "psuedocereal",
    "seiko",
@@ -36,7 +37,14 @@ ARTISTS = [
    "Vincent Vinyl",
    "vladimir",
    "Waffle House",
-   "Warp Drive"
+   "Warp Drive",
+   "Halifax",
+   "Hudson",
+   "Lamar",
+   "Lost Boy",
+   "Paranoia",
+   "Some Sunday",
+   "System"
  ]
 
 
@@ -56,6 +64,116 @@ end
 
 p "creating new albums..."
 all_albums = []
+
+all_albums << Album.create!(
+title: "marble",
+user_id: User.find_by(username: "warpdrive").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/warpdrive-marble.png"
+)
+
+all_albums << Album.create!(
+title: "Armored Woman",
+user_id: User.find_by(username: "lorde").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/lorde-armoredwoman.jpg"
+)
+
+all_albums << Album.create!(
+title: "FRI-@!",
+user_id: User.find_by(username: "seiko").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/seiko-fri21.jpg"
+)
+all_albums << Album.create!(
+title: "Sunbather",
+user_id: User.find_by(username: "deafheaven").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/sunbather.jpg"
+)
+
+all_albums << Album.create!(
+title: "Armada",
+user_id: User.find_by(username: "halifax").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/halifax-armada.png")
+
+all_albums << Album.create!(
+title: "Manhattan Sunset",
+user_id: User.find_by(username: "infinitymirror").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/infinitymirror-manhattansunset.jpg"
+)
+
+all_albums << Album.create!(
+title: "How do I delete this",
+user_id: User.find_by(username: "handsup").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/handsup-howdoideletethis.jpg"
+)
+
+all_albums << Album.create!(
+title: "Homesick For A Place I'm Not Even Sure Exists",
+user_id: User.find_by(username: "thewarondrugs").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/thewarondrugs-homesick.jpg"
+)
+
+all_albums << Album.create!(
+title: "Change",
+user_id: User.find_by(username: "themoneychangers").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/themoneychangers-change.jpg"
+)
+
+##############################################################################
+
+all_albums << Album.create!(
+title: "Crossed Paths",
+user_id: User.find_by(username: "hudson").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/hudson-crossedpaths.png")
+
+all_albums << Album.create!(
+title: "A Comfortable State of Being",
+user_id: User.find_by(username: "arkivet").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/newfakeart/arkivet-acomfortablestateofbeing.png")
+
+all_albums << Album.create!(
+title: "flora",
+user_id: User.find_by(username: "flora").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/flora-flora.jpg")
+
+
+all_albums << Album.create!(
+title: "Like You Very Much",
+user_id: User.find_by(username: "lamar").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/lamar-likeyouverymuch.png")
+
+
+all_albums << Album.create!(
+title: "Roads Less Traveled",
+user_id: User.find_by(username: "lostboy").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/lostboy-roadlesstravelled.jpg")
+
+all_albums << Album.create!(
+title: "Is It?",
+user_id: User.find_by(username: "paranoia").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/paranoia-isit.jpg")
+
+all_albums << Album.create!(
+title: "If You Know All This",
+user_id: User.find_by(username: "somesunday").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/somesunday-ifyouknowallthis.jpg")
+
+all_albums << Album.create!(
+title: "Collision",
+user_id: User.find_by(username: "system").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/system-collision.jpg")
+
+
+all_albums << Album.create!(
+title: "Roads to Judah",
+user_id: User.find_by(username: "deafheaven").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/roadstojudah.jpg"
+)
+
+
+all_albums << Album.create!(
+title: "New Bermuda",
+user_id: User.find_by(username: "deafheaven").id,
+artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/demo+seed/newbermuda.png"
+)
 
 all_albums << Album.create!(
 title: "The Benefits of Doubting",
@@ -78,7 +196,7 @@ all_albums << Album.create!(
 all_albums << Album.create!(
   title: "why me?",
   user_id: User.find_by(username: "fracture").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/arkivet-thebenefitsofdoubting.png"
+  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/fracture-whyme.png"
 )
 
 all_albums << Album.create!(
@@ -87,11 +205,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/friedegg-iminlove.png"
 )
 
-all_albums << Album.create!(
-  title: "How do I delete this",
-  user_id: User.find_by(username: "handsup").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/handsup-howdoideletethis.jpg"
-)
 
 all_albums << Album.create!(
   title: "Infinity Mirror",
@@ -99,11 +212,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/infinitymirror-infinitymirror.jpg"
 )
 
-all_albums << Album.create!(
-  title: "Manhattan Sunset",
-  user_id: User.find_by(username: "infinitymirror").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/infinitymirror-manhattansunset.jpg"
-)
 
 all_albums << Album.create!(
   title: "KAYAK",
@@ -117,11 +225,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/lifearctic-noise.png"
 )
 
-all_albums << Album.create!(
-  title: "Armored Woman",
-  user_id: User.find_by(username: "lorde").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/lorde-armoredwoman.jpg"
-)
 
 all_albums << Album.create!(
   title: "You Said You Loved Me",
@@ -141,11 +244,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/psuedocereal-lovershour.jpg"
 )
 
-all_albums << Album.create!(
-  title: "FRI-@!",
-  user_id: User.find_by(username: "seiko").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/seiko-fri21.jpg"
-)
 
 all_albums << Album.create!(
   title: "The Flood",
@@ -165,11 +263,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/thegmen-stratosphere.jpg"
 )
 
-all_albums << Album.create!(
-  title: "Change",
-  user_id: User.find_by(username: "themoneychangers").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/themoneychangers-change.jpg"
-)
 
 all_albums << Album.create!(
   title: "Utopia",
@@ -177,11 +270,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/theonceprouds-utopia.jpg"
 )
 
-all_albums << Album.create!(
-  title: "Homesick For A Place I'm Not Even Sure Exists",
-  user_id: User.find_by(username: "thewarondrugs").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/thewarondrugs-homesick.jpg"
-)
 
 all_albums << Album.create!(
   title: "STONE",
@@ -219,11 +307,6 @@ all_albums << Album.create!(
   artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/wafflehouse-wafflehouse.jpg"
 )
 
-all_albums << Album.create!(
-  title: "marble",
-  user_id: User.find_by(username: "warpdrive").id,
-  artwork: "https://s3.us-east-2.amazonaws.com/aux-io-dev/albums/artworks/000/000/seed_artwork/warpdrive-marble.png"
-)
 
 
 TRACKS = [
