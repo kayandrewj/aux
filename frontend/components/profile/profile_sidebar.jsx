@@ -54,9 +54,6 @@ class ProfileSidebar extends React.Component {
 
           {this.props.currentUser && (this.targetProfileId() == this.props.currentUser.id) ?
             <div className="profile-vip-links">
-              <Link to={`/profile/${this.targetProfileId()}`} className="profile-vip">
-                Edit Profile
-              </Link><br/>
               <Link to={`/profile/${this.targetProfileId()}/newAlbum`} className="profile-vip">
                 Add Music
               </Link>
@@ -90,3 +87,10 @@ class ProfileSidebar extends React.Component {
 }
 
 export default withRouter(ProfileSidebar);
+
+
+
+
+// <Link to={`/profile/${this.targetProfileId()}`} className="profile-vip">
+//   Edit Profile
+// </Link><br/>
