@@ -2,30 +2,17 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Main from './main';
 import merge from 'lodash/merge';
-import { fetchFeaturedAlbums } from '../../util/main_api_util';
+import { fetchFeaturedAlbums } from '../../actions/main_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let artists = {};
-  let keys = Object.keys(state.main);
-  let i = 0;
-  while (i < 4) {
-    artists = merge({}, artists, state.main[keys[i]]);
-    i++;
-  }
-  let albums = {};
-  while (i < 8) {
-    albums = merge({}, albums, state.main[keys[i]]);
-    i++;
-  }
   return {
-    featuredArtists: artists,
-    featuredAlbums: albums,
+    albums: state.main.features
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchFeaturedAlbums: () => dispatch(fetchFeaturedAlbums),
+    fetchFeaturedAlbums: () => dispatch(fetchFeaturedAlbums()),
   };
 };
 

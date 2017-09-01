@@ -1,42 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import AlbumIndexItem from './album_index_item';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
   }
 
+
   componentDidMount() {
     this.props.fetchFeaturedAlbums();
   }
 
   render() {
-    let artists;
-    if (this.props.artists) {
-      artists = Object.keys(this.props.artists).map(id, artist => (
-        <ProfileAlbumItem
-          artist={artist}
-          key={ id } />
-        )
-      );
-    }
+
     let albums;
+    let i = "a";
     if (this.props.albums) {
-      albums = Object.keys(this.props.albums).map(id, album => (
-        <ProfileAlbumItem
-          album={album}
-          key={ id } />
-        )
+      albums = Object.keys(this.props.albums).map(idx => {
+        i += "a";
+        return <AlbumIndexItem
+          album={this.props.albums[idx]}
+          key={ idx }
+          number={i}
+          />;
+        }
       );
     }
 
     return(
-      <div>
+      <div className="album-back-box">
         <ul>
-          { artists }
-        </ul>
-        <ul>
+          <p className="new-notable">New and Notable</p>
           { albums }
         </ul>
       </div>
