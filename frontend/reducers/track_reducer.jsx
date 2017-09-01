@@ -7,7 +7,7 @@ const TrackReducer = (state = {}, action) => {
   switch (action.type) {
 
     case RECEIVE_ALBUM_TRACKS:
-      return merge({}, state, action.albumTracks);
+      return merge({}, action.albumTracks);
 
     case RECEIVE_TRACK:
       return merge({}, state, action.trackInfo);
