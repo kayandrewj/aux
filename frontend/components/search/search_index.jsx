@@ -35,7 +35,6 @@ class SearchIndex extends React.Component {
     }
 
     if (this.props.tracks && this.props.tracks.length > 0) {
-      debugger
       tracks = this.props.tracks.map(album => {
         return <SearchIndexTrack
           track={track}
@@ -44,7 +43,6 @@ class SearchIndex extends React.Component {
     });
     }
 
-    debugger
     return (
       <div className="search-results">
         { artists }

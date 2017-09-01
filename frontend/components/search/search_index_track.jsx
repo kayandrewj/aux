@@ -7,7 +7,6 @@ class SearchIndexTrack extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <li className="search-index-track">
         <p>SONG</p>
