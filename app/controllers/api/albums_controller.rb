@@ -5,9 +5,10 @@ class Api::AlbumsController < ApplicationController
       @albums = Album.where(user_id: params[:user_id])
       render 'api/albums/index'
     end
-
-    @albums = Album.take(8)
-    render 'api/albums/index'
+    if(!params[:user_id])
+      @albums = Album.take(9)
+      render 'api/albums/index'
+    end
   end
 
   def create

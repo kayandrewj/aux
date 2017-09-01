@@ -1,0 +1,58 @@
+.album-back-box ul {
+  width: 100%;
+  max-width: 1008px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #121212;
+}
+
+
+.album-back-box a:hover {
+  text-decoration: none;
+}
+
+.img-aa, .img-aaa {
+  width: 504px;
+  height: 504px;
+}
+
+.album-back-box img {
+  transition: ease 0.1s;
+}
+
+.album-back-box img:hover {
+  opacity: 0.5;
+}
+
+.img-aaaa, .img-aaaaa, .img-aaaaaa {
+  width: 336px;
+  height: 336px;
+  margin-top: -3px;
+}
+
+.img-aaaaaaa, .img-aaaaaaaa, .img-aaaaaaaaa, .img-aaaaaaaaaa {
+  width: 252px;
+  height: 252px;
+  margin-top: -3px;
+}
+
+.main-album-text {
+  color: white;
+  font-weight: 900;
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.new-notable {
+  width:100%;
+  background-color: #F8F8F8;
+  padding-top: 52px;
+  padding-bottom: 9px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: #363636;
+}

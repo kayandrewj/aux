@@ -1,9 +1,5 @@
-json.set!("features") do
-  @albums.each do |album|
-    json.set!(album.id) do
-      json.(album, :id, :title, :artwork)
-      json.(album.user.artist_profile, :band)
-      json.(album.user, :header, :bio)
-    end
+@albums.each do |album|
+  json.set!(album.id) do
+    json.extract!(album, :id, :title, :artwork)
   end
 end
