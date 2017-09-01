@@ -29,6 +29,6 @@ https://aux-io.herokuapp.com/#/
 
   AUX is designed closely after bandcamp, focused on intuitive and visually pleasing placement of components. Some components were left out; the alternative sign-in modal and the altered color scheme on some of the nav bars.
   
- ### Expansion
+ ## Expansion
  
   Current priorities for AUX are database migration, genre implementation, and better search. Back burner plans include social integration and algorithmic listening suggestions.
