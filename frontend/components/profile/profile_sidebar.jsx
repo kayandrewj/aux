@@ -52,7 +52,7 @@ class ProfileSidebar extends React.Component {
             {this.props.targetArtistProfile.bio}
           </p>
 
-          {this.props.currentUser && (this.targetProfileId() == this.props.currentUser.id) ?
+          {this.props.currentUser && (this.targetProfileId() == this.props.currentUser.id && this.props.currentUser.is_artist) ?
             <div className="profile-vip-links">
               <Link to={`/profile/${this.targetProfileId()}/newAlbum`} className="profile-vip">
                 Add Music
