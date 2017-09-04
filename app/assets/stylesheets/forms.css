@@ -23,3 +23,7 @@
 .session-form {
   font-family: "Roboto", sans-serif;
 }
+
+.postbtn:disabled {
+  background-color: grey;
+}

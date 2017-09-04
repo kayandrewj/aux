@@ -9,7 +9,7 @@
   border: 1px solid rgba(0,0,0,.1);
   border-top: 1px solid #ffffff;
   box-shadow: 0 -1px 0 #ffffff;
-  
+
 }
 
 .album-form {
@@ -78,4 +78,8 @@
   border: 1px solid #bebebe;
   text-align: left;
   left: -100px;
+}
+
+.nextbtn:disabled {
+  background-color: grey
 }
