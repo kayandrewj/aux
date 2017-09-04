@@ -34,11 +34,13 @@ class AlbumForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.refs.nextbtn.setAttribute("disabled", "disabled");
     let formData = new FormData();
     formData.append("album[title]", this.state.title);
     formData.append("album[artwork]", this.state.artwork);
     this.props.createAlbum(formData).then(
       (action) => {
+        this.refs.nextbtn.removeAttribute("disabled");
         return this.props.history.push(`/album/${action.album.displayAlbum.id}/newTracks`);
       }
     );
@@ -58,7 +60,7 @@ class AlbumForm extends React.Component {
           <label className="album-form-title">Album Title
             <input className="album-input-title" onChange={this.handleChange('title')}/>
           </label>
-          <button>Next</button>
+          <button ref="nextbtn" className="nextbtn">Next</button>
           {this.state.url ? <img className="album-art-preview" src={this.state.url}/> : undefined}
         </form>
 
