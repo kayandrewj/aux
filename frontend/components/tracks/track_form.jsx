@@ -32,10 +32,15 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.refs.postbtn.setAttribute("disabled", "disabled");
     let formData = new FormData();
     formData.append("track[title]", this.state.title);
     formData.append("track[audio_file]", this.state.audio_file);
-    this.props.createTrack(formData, this.props.match.params.albumId);
+    this.props.createTrack(formData, this.props.match.params.albumId).then(
+      (action) => {
+        return this.props.history.push(`/album/${this.props.match.params.albumId}`);
+      }
+    );
   }
 
   handleChange(field) {
@@ -52,7 +57,7 @@ class TrackForm extends React.Component {
           <label>Audio
             <input type="file" onChange={this.updateFile} className="file-upload-input"/>
           </label>
-          <button>Post</button>
+          <button ref="postbtn" className="postbtn">Post</button>
           <img src={this.state.url}/>
         </form>
       </div>

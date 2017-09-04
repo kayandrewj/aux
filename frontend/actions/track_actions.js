@@ -12,7 +12,7 @@ export const receiveAlbumTracks = (albumTracks) => {
 };
 
 export const fetchAlbumTracks = albumId => (dispatch) => {
-  TrackApiUtil.fetchAlbumTracks(albumId).then(
+  return TrackApiUtil.fetchAlbumTracks(albumId).then(
     albumTracks => dispatch(receiveAlbumTracks(albumTracks))
   );
 };
@@ -25,7 +25,7 @@ export const receiveTrack = (track) => {
 };
 
 export const createTrack = (track, album_id) => dispatch => {
-  TrackApiUtil.createTrack(track, album_id).then(
+  return TrackApiUtil.createTrack(track, album_id).then(
     track => dispatch(receiveTrack(track))
   );
 };
