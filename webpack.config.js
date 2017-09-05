@@ -1,8 +1,8 @@
 const path = require('path');
 
 const webpack = require("webpack");
-let plugins = [];
-let devPlugins = [];
+var plugins = [];
+var devPlugins = [];
 
 const prodPlugins = [
   new webpack.DefinePlugin({
