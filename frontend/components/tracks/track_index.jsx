@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TrackIndexItem from './track_index_item';
 import { withRouter } from 'react-router-dom';
+import JSZip from 'jszip';
+
+
 
 class TrackIndex extends React.Component {
   constructor(props) {
@@ -9,7 +12,11 @@ class TrackIndex extends React.Component {
 
     this.clearTracks = this.clearTracks.bind(this);
     this.addTrackButton = this.addTrackButton.bind(this);
+    this.buildZipFile = this.buildZipFile.bind(this);
+
   }
+
+
 
   componentDidMount() {
     this.props.fetchAlbumTracks(this.props.match.params.albumId);
@@ -29,10 +36,20 @@ class TrackIndex extends React.Component {
   addTrackButton() {
     if (this.props.displayAlbum && this.props.currentUserId === this.props.displayAlbum.userId) {
       return <Link to={`/album/${displayAlbum.id}/newTracks`}>Add Track</Link>;
+      }
+    }
+
+  buildZipFile() {
+    const zip = new JSZip();
+    zip.folder(this.props.displayAlbum.title);
+    Object.keys(tracks).forEach(track => {
+      zip.file(track.audio_file, track.title);
+    });
   }
-}
+
 
   render() {
+    console.log(this.props);
     let tracks;
     if (this.props.tracks) {
       tracks = Object.keys(this.props.tracks).map((id, idx) => {
@@ -47,6 +64,7 @@ class TrackIndex extends React.Component {
       <div className="track-index">
         { tracks }
         {this.addTrackButton()}
+        <button onClick={this.buildZipFile}>Download Album</button>
       </div>
     );
   }
