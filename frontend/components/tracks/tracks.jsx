@@ -9,6 +9,7 @@ const Tracks = (props) => {
         tracks={props.tracks}
         fetchAlbumTracks={props.fetchAlbumTracks}
         clearTracks={props.clearTracks}
+        displayAlbum={props.displayAlbum}
         />
     </div>
   );
