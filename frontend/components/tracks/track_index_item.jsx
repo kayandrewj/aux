@@ -10,11 +10,14 @@ class TrackIndexItem extends React.Component {
 
   _onPlay() {
     let tracks = document.getElementsByTagName('audio');
-    // debugger
+    let spans = document.querySelectorAll('span.track-title');
     let i = 0;
     while (i < tracks.length) {
       if (tracks[i].currentSrc != this.props.track.audio_file) {
         tracks[i].pause();
+        spans[i].classList.value = "track-title";
+      } else {
+        spans[i].classList.value += " first-list-item";
       }
       i++;
     }
