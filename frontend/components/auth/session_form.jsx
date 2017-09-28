@@ -119,35 +119,30 @@ class SessionForm extends React.Component {
 
           <div className="formdemobutton">
 
-          <form onSubmit={ this.handleSubmit }>
-            <label className="username-input">Username
-              <input onChange={this.handleChange('username')}/>
-            </label>
+            <form onSubmit={ this.handleSubmit }>
+              <label className="username-input">Username
+                <input onChange={this.handleChange('username')}/>
+              </label>
 
-            {this.props.formType === '/login' ? null : emailForm}
+              {this.props.formType === '/login' ? null : emailForm}
 
-            <label className="password-input">Password
-              <input type="password" onChange={this.handleChange('password')}/>
-            </label>
+              <label className="password-input">Password
+                <input type="password" onChange={this.handleChange('password')}/>
+              </label>
 
-            {this.props.formType === '/band' ? bandForm : null}
-            {this.props.formType === '/band' ? bioForm : null}
+              {this.props.formType === '/band' ? bandForm : null}
+              {this.props.formType === '/band' ? bioForm : null}
 
-            <button>{this.buttonText()}</button>
-          </form>
+              <button>{this.buttonText()}</button>
+            </form>
 
-        </div>
-
-
+          </div>
         </div>
 
         <div className="session-question">
 
           {this.question()}
           {this.answer()}
-
-
-
           {this.greeting() === 'Login' ? <button className="demo-button" onClick={this.loginGuest}>Demo Login</button> : undefined}
 
         </div>

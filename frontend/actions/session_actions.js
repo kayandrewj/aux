@@ -24,9 +24,6 @@ export const clearErrors = () => {
   };
 };
 
-
-
-
 export const signup = user => dispatch => {
   SessionApiUtil.signup(user).then(
     newUser => dispatch(receiveCurrentUser(newUser)),

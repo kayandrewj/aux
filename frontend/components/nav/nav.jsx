@@ -46,14 +46,12 @@ class Nav extends React.Component {
     } else {
       return(
         <span className='nav-links'>
-        <div className='nav-link-box'>
-          <Link to={`/profile/${this.usersId()}`} className="nav-greeting">{this.usersName()}</Link>
-        </div>
-        <div className='nav-link-box'>
-          <button className="log-out" onClick={this.props.logout}>Log out</button>
-        </div>
-
-
+          <div className='nav-link-box'>
+            <Link to={`/profile/${this.usersId()}`} className="nav-greeting">{this.usersName()}</Link>
+          </div>
+          <div className='nav-link-box'>
+            <button className="log-out" onClick={this.props.logout}>Log out</button>
+          </div>
         </span>
       );
     }

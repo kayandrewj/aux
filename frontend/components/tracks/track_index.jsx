@@ -13,7 +13,6 @@ class TrackIndex extends React.Component {
     this.addTrackButton = this.addTrackButton.bind(this);
     this.buildZipFile = this.buildZipFile.bind(this);
     this.downloadZipFile = this.downloadZipFile.bind(this);
-
   }
 
   componentDidMount() {
@@ -34,8 +33,8 @@ class TrackIndex extends React.Component {
   addTrackButton() {
     if (this.props.displayAlbum && this.props.currentUserId === this.props.displayAlbum.userId) {
       return <Link to={`/album/${this.props.displayAlbum.id}/newTracks`}>Add Track</Link>;
-      }
     }
+  }
 
   buildZipFile() {
     this.zip = new JSZip();
@@ -50,16 +49,10 @@ class TrackIndex extends React.Component {
     } else {
       promise = this.zip.generateAsync({type : "string"});
     }
-    debugger
   }
 
-// use ruby-zip or zip-zip
-// takes files and turns them into zips
-
   downloadZipFile() {
-
     this.buildZipFile();
-
     this.zip.generateAsync({type:"base64"}).then(function(base64) {
       window.location = "data:application/zip;base64," + base64;
     }, function(err) {
@@ -76,7 +69,7 @@ class TrackIndex extends React.Component {
           key={id}
           idx={idx}
         />;
-    });
+      });
     }
     return (
       <div className="track-index">

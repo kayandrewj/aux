@@ -1,27 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                  :integer          not null, primary key
-#  username            :string           not null
-#  email               :string           not null
-#  password_digest     :string           not null
-#  session_token       :string           not null
-#  is_artist           :boolean          default(FALSE), not null
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  avatar_file_name    :string
-#  avatar_content_type :string
-#  avatar_file_size    :integer
-#  avatar_updated_at   :datetime
-#  bio                 :text
-#  location            :string
-#  header_file_name    :string
-#  header_content_type :string
-#  header_file_size    :integer
-#  header_updated_at   :datetime
-#
-
 class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, :session_token, uniqueness: true

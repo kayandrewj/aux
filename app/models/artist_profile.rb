@@ -1,17 +1,3 @@
-# == Schema Information
-#
-# Table name: artist_profiles
-#
-#  id                  :integer          not null, primary key
-#  user_id             :integer          not null
-#  band                :string           not null
-#  profile_color       :string
-#  header_file_name    :string
-#  header_content_type :string
-#  header_file_size    :integer
-#  header_updated_at   :datetime
-#
-
 class ArtistProfile < ApplicationRecord
   include PgSearch
   multisearchable against: %i(band user)

@@ -39,7 +39,6 @@ class ProfileIndex extends React.Component {
         { albums }
       </div>
     );
-
   }
 }
 

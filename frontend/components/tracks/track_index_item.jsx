@@ -7,7 +7,6 @@ class TrackIndexItem extends React.Component {
     this._onPlay = this._onPlay.bind(this);
   }
 
-
   _onPlay() {
     let tracks = document.getElementsByTagName('audio');
     let spans = document.querySelectorAll('span.track-title');

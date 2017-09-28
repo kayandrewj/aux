@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_USER } from '../actions/user_actions';
 
 const UserReducer = (state = {}, action) => {
+
   Object.freeze(state);
 
   switch (action.type) {
@@ -10,7 +11,6 @@ const UserReducer = (state = {}, action) => {
     default:
       return state;
   }
-
 };
 
 export default UserReducer;

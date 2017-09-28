@@ -81,16 +81,8 @@ class ProfileSidebar extends React.Component {
         {this.targetProfileInfo()}
 
       </div>
-
     );
   }
 }
 
 export default withRouter(ProfileSidebar);
-
-
-
-
-// <Link to={`/profile/${this.targetProfileId()}`} className="profile-vip">
-//   Edit Profile
-// </Link><br/>

@@ -1,18 +1,3 @@
-# == Schema Information
-#
-# Table name: albums
-#
-#  id                   :integer          not null, primary key
-#  user_id              :integer          not null
-#  title                :string           not null
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  artwork_file_name    :string
-#  artwork_content_type :string
-#  artwork_file_size    :integer
-#  artwork_updated_at   :datetime
-#
-
 class Album < ApplicationRecord
   include PgSearch
   multisearchable against: %i(title user)

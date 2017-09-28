@@ -22,5 +22,4 @@ class Api::SessionsController < ApplicationController
     render json: {}
   end
 
-
 end

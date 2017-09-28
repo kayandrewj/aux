@@ -39,7 +39,6 @@ class ProfileHeader extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div>

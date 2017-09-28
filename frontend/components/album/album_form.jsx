@@ -65,7 +65,7 @@ class AlbumForm extends React.Component {
         </form>
 
       </div>
-  );
+    );
   }
 }
 

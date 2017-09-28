@@ -14,7 +14,7 @@ class SearchIndex extends React.Component {
     let albums;
     let tracks;
     if (!this.props.artists && !this.props.albums && !this.props.tracks) {
-      error = <p>looks like there's nothing here...</p>
+      error = <p>looks like there's nothing here...</p>;
     }
     if (this.props.artists && this.props.artists.length > 0) {
       artists = this.props.artists.map(artist => {
@@ -22,7 +22,7 @@ class SearchIndex extends React.Component {
           artist={artist}
           key={ artist.id }
         />;
-    });
+      });
     }
 
     if (this.props.albums && this.props.albums.length > 0) {
@@ -31,7 +31,7 @@ class SearchIndex extends React.Component {
           album={album}
           key={ album.id }
         />;
-    });
+      });
     }
 
     if (this.props.tracks && this.props.tracks.length > 0) {
@@ -40,7 +40,7 @@ class SearchIndex extends React.Component {
           track={track}
           key={ track.id }
         />;
-    });
+      });
     }
 
     return (
