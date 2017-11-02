@@ -61,7 +61,7 @@ class Nav extends React.Component {
     e.preventDefault();
     this.props.sendSearch(this.state.query).then(
       (action) => {
-        return this.props.history.push(`/results`);
+        return this.props.history.push(`/results/${this.state.query}`);
       }
     );
   }
